@@ -1,0 +1,445 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.3832,
+          43.6532
+        ]
+      },
+      "properties": {
+        "city": "Toronto",
+        "country": "Canada",
+        "average_monthly_salary": 4795.75,
+        "monthly_rent_1br": 2222.0,
+        "monthly_food": 650.0,
+        "engels_index": 13.554,
+        "rental_index": 46.333,
+        "usi": 59.886,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.5752,
+          44.6488
+        ]
+      },
+      "properties": {
+        "city": "Halifax",
+        "country": "Canada",
+        "average_monthly_salary": 4953.92,
+        "monthly_rent_1br": 2029.0,
+        "monthly_food": 650.0,
+        "engels_index": 13.121,
+        "rental_index": 40.957,
+        "usi": 54.078,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.1207,
+          49.2827
+        ]
+      },
+      "properties": {
+        "city": "Vancouver",
+        "country": "Canada",
+        "average_monthly_salary": 5792.67,
+        "monthly_rent_1br": 2407.0,
+        "monthly_food": 715.0,
+        "engels_index": 12.343,
+        "rental_index": 41.553,
+        "usi": 53.896,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      },
+      "properties": {
+        "city": "Montreal",
+        "country": "Canada",
+        "average_monthly_salary": 4770.5,
+        "monthly_rent_1br": 1715.0,
+        "monthly_food": 611.0,
+        "engels_index": 12.808,
+        "rental_index": 35.95,
+        "usi": 48.758,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6972,
+          45.4215
+        ]
+      },
+      "properties": {
+        "city": "Ottawa",
+        "country": "Canada",
+        "average_monthly_salary": 5416.25,
+        "monthly_rent_1br": 1951.0,
+        "monthly_food": 650.0,
+        "engels_index": 12.001,
+        "rental_index": 36.021,
+        "usi": 48.022,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.1384,
+          49.8951
+        ]
+      },
+      "properties": {
+        "city": "Winnipeg",
+        "country": "Canada",
+        "average_monthly_salary": 4252.58,
+        "monthly_rent_1br": 1404.0,
+        "monthly_food": 536.12,
+        "engels_index": 12.607,
+        "rental_index": 33.015,
+        "usi": 45.622,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.6298,
+          41.8781
+        ]
+      },
+      "properties": {
+        "city": "Chicago",
+        "country": "USA",
+        "average_monthly_salary": 5437.5,
+        "monthly_rent_1br": 1957.0,
+        "monthly_food": 520.0,
+        "engels_index": 9.563,
+        "rental_index": 35.991,
+        "usi": 45.554,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0719,
+          51.0447
+        ]
+      },
+      "properties": {
+        "city": "Calgary",
+        "country": "Canada",
+        "average_monthly_salary": 4853.58,
+        "monthly_rent_1br": 1539.0,
+        "monthly_food": 650.0,
+        "engels_index": 13.392,
+        "rental_index": 31.709,
+        "usi": 45.101,
+        "rating": "Unaffordable",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.4938,
+          53.5461
+        ]
+      },
+      "properties": {
+        "city": "Edmonton",
+        "country": "Canada",
+        "average_monthly_salary": 4330.42,
+        "monthly_rent_1br": 1289.0,
+        "monthly_food": 650.0,
+        "engels_index": 15.01,
+        "rental_index": 29.766,
+        "usi": 44.776,
+        "rating": "Severe burden",
+        "as_of_date": "2025-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6362,
+          -43.5321
+        ]
+      },
+      "properties": {
+        "city": "Christchurch",
+        "country": "New Zealand",
+        "average_monthly_salary": 6547.666666666667,
+        "monthly_rent_1br": 1950.0,
+        "monthly_food": 780.0,
+        "engels_index": 11.912640635340834,
+        "rental_index": 29.781601588352085,
+        "usi": 41.69424222369292,
+        "rating": "Severe burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7633,
+          -36.8485
+        ]
+      },
+      "properties": {
+        "city": "Auckland",
+        "country": "New Zealand",
+        "average_monthly_salary": 7254.0,
+        "monthly_rent_1br": 1950.0,
+        "monthly_food": 650.0,
+        "engels_index": 8.960573476702509,
+        "rental_index": 26.881720430107524,
+        "usi": 35.842293906810035,
+        "rating": "High burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7762,
+          -41.2865
+        ]
+      },
+      "properties": {
+        "city": "Wellington",
+        "country": "New Zealand",
+        "average_monthly_salary": 7449.0,
+        "monthly_rent_1br": 1755.0,
+        "monthly_food": 754.0,
+        "engels_index": 10.12216404886562,
+        "rental_index": 23.56020942408377,
+        "usi": 33.682373472949386,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2093,
+          -33.8688
+        ]
+      },
+      "properties": {
+        "city": "Sydney",
+        "country": "Australia",
+        "average_monthly_salary": 8892.0,
+        "monthly_rent_1br": 2925.0,
+        "monthly_food": 780.0,
+        "engels_index": 8.771929824561402,
+        "rental_index": 32.89473684210527,
+        "usi": 41.66666666666667,
+        "rating": "Severe burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8456,
+          -12.4634
+        ]
+      },
+      "properties": {
+        "city": "Darwin",
+        "country": "Australia",
+        "average_monthly_salary": 8350.333333333334,
+        "monthly_rent_1br": 2262.0,
+        "monthly_food": 1040.0,
+        "engels_index": 12.454592631032693,
+        "rental_index": 27.088738972496106,
+        "usi": 39.5433316035288,
+        "rating": "High burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          153.0251,
+          -27.4698
+        ]
+      },
+      "properties": {
+        "city": "Brisbane",
+        "country": "Australia",
+        "average_monthly_salary": 8466.033333333335,
+        "monthly_rent_1br": 2457.0,
+        "monthly_food": 728.0,
+        "engels_index": 8.599068434252954,
+        "rental_index": 29.02185596560372,
+        "usi": 37.620924399856676,
+        "rating": "High burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.9631,
+          -37.8136
+        ]
+      },
+      "properties": {
+        "city": "Melbourne",
+        "country": "Australia",
+        "average_monthly_salary": 8491.6,
+        "monthly_rent_1br": 2242.5,
+        "monthly_food": 650.0,
+        "engels_index": 7.654623392529087,
+        "rental_index": 26.408450704225352,
+        "usi": 34.063074096754434,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          147.3272,
+          -42.8821
+        ]
+      },
+      "properties": {
+        "city": "Hobart",
+        "country": "Australia",
+        "average_monthly_salary": 7769.666666666667,
+        "monthly_rent_1br": 1911.0,
+        "monthly_food": 689.0,
+        "engels_index": 8.86781929726715,
+        "rental_index": 24.59564974902398,
+        "usi": 33.46346904629113,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6007,
+          -34.9285
+        ]
+      },
+      "properties": {
+        "city": "Adelaide",
+        "country": "Australia",
+        "average_monthly_salary": 8207.766666666666,
+        "monthly_rent_1br": 2028.0,
+        "monthly_food": 650.0,
+        "engels_index": 7.919328440948208,
+        "rental_index": 24.708304735758407,
+        "usi": 32.62763317670662,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.8605,
+          -31.9505
+        ]
+      },
+      "properties": {
+        "city": "Perth",
+        "country": "Australia",
+        "average_monthly_salary": 9337.033333333333,
+        "monthly_rent_1br": 2340.0,
+        "monthly_food": 650.0,
+        "engels_index": 6.961525966491855,
+        "rental_index": 25.06149347937068,
+        "usi": 32.02301944586253,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.13,
+          -35.2809
+        ]
+      },
+      "properties": {
+        "city": "Canberra",
+        "country": "Australia",
+        "average_monthly_salary": 9672.866666666667,
+        "monthly_rent_1br": 2262.0,
+        "monthly_food": 650.0,
+        "engels_index": 6.719827972403906,
+        "rental_index": 23.385001343965595,
+        "usi": 30.104829316369504,
+        "rating": "Stretched",
+        "as_of_date": "2025-09"
+      }
+    }
+  ]
+}
