@@ -1,10 +1,10 @@
 // =====================================================
-// app.js — Leaflet V0 (GeoJSON Points + USI coloring)
-// Files expected in the same folder:
+// app.js — V1 (Leaflet + GeoJSON + USI 6-level scheme)
+// Expected files in the same folder:
 //   - index.html
 //   - style.css
 //   - app.js
-//   - usi_cities_2025Q4.geojson
+//   - usi_cities_2025Q4v1.geojson  (or your actual geojson filename)
 // =====================================================
 
 
@@ -32,7 +32,13 @@ function toNumber(x) {
 
 
 // ===============================
-// 3) USI classification (your rules)
+// 3) USI classification (V1: 6 tiers)
+//   <30  Comfortable
+//   30-35 Stretched
+//   35-40 High burden
+//   40-45 Severe burden
+//   45-55 Unaffordable
+//   >55  Extreme
 // ===============================
 function usiRating(usi) {
   if (usi === null) return "Unknown";
@@ -40,35 +46,37 @@ function usiRating(usi) {
   if (usi < 35) return "Stretched";
   if (usi < 40) return "High burden";
   if (usi < 45) return "Severe burden";
-  return "Unaffordable";
+  if (usi < 55) return "Unaffordable";
+  return "Extreme";
 }
 
-// Color scheme: green, yellow, orange, red, dark purple
+// Color scheme: green, yellow, orange, red, dark purple, darker purple
 function getColor(usi) {
-  if (usi === null) return "#888888"; // missing / unknown
-  if (usi < 30) return "#2ecc71";     // green
-  if (usi < 35) return "#f1c40f";     // yellow
-  if (usi < 40) return "#e67e22";     // orange
-  if (usi < 45) return "#e74c3c";     // red
-  return "#6c3483";                   // dark purple
+  if (usi === null) return "#888888";
+  if (usi < 30) return "#2ecc71";   // green
+  if (usi < 35) return "#f1c40f";   // yellow
+  if (usi < 40) return "#e67e22";   // orange
+  if (usi < 45) return "#e74c3c";   // red
+  if (usi < 55) return "#6c3483";   // dark purple
+  return "#3b1f4a";                 // darker purple (Extreme)
 }
 
-// Optional: make higher stress slightly bigger
+// Marker size: user-chosen V1 scale
+// 4 / 6 / 8 / 12 / 20 / 28
 function getRadius(usi) {
   if (usi === null) return 4;
   if (usi < 30) return 4;
-  if (usi < 35) return 5;
-  if (usi < 40) return 6;
-  if (usi < 45) return 7;
-  return 8;
+  if (usi < 35) return 6;
+  if (usi < 40) return 8;
+  if (usi < 45) return 12;
+  if (usi < 55) return 20;
+  return 28;
 }
 
 
 // ===============================
 // 4) Detect which property is the USI value
 // ===============================
-// If your GeoJSON property name is fixed (e.g. "usi"), you can just hardcode it.
-// This auto-detection makes the app tolerant to naming changes.
 const INDEX_KEYS_CANDIDATES = ["usi", "USI", "index", "score", "urban_stress_index", "urbanStressIndex"];
 
 function pickIndexKey(properties) {
@@ -82,7 +90,7 @@ function pickIndexKey(properties) {
 
 
 // ===============================
-// 5) Pretty popup (human readable)
+// 5) Popup content (human readable)
 // ===============================
 function formatPopup(props, usiKey, usiValue) {
   const city = props.city || props.City || props.name || props.NAME || "Unknown city";
@@ -92,7 +100,7 @@ function formatPopup(props, usiKey, usiValue) {
   const rating = usiRating(usiValue);
 
   // Optional extra fields (only show if present)
-  // If your rent/food fields are already in % not fraction, we handle both nicely.
+  // Accept either fraction (0.32) or percent (32)
   const rentRaw = props.rent_share ?? props.rentShare ?? props.rent_pct ?? props.rentPercent;
   const foodRaw = props.food_share ?? props.foodShare ?? props.food_pct ?? props.foodPercent;
 
@@ -100,7 +108,6 @@ function formatPopup(props, usiKey, usiValue) {
   const food = toNumber(foodRaw);
 
   function formatPercent(x) {
-    // Accept 0.32 (fraction) or 32 (already percent)
     if (x === null) return null;
     return (x <= 1.2) ? (x * 100) : x;
   }
@@ -108,16 +115,11 @@ function formatPopup(props, usiKey, usiValue) {
   const rentPct = formatPercent(rent);
   const foodPct = formatPercent(food);
 
-  const rentLine = (rentPct === null)
-    ? ""
-    : `<div>Rent share: <b>${rentPct.toFixed(0)}%</b></div>`;
-
-  const foodLine = (foodPct === null)
-    ? ""
-    : `<div>Food share: <b>${foodPct.toFixed(0)}%</b></div>`;
+  const rentLine = (rentPct === null) ? "" : `<div>Rent share: <b>${rentPct.toFixed(0)}%</b></div>`;
+  const foodLine = (foodPct === null) ? "" : `<div>Food share: <b>${foodPct.toFixed(0)}%</b></div>`;
 
   return `
-    <div style="min-width:220px">
+    <div style="min-width:230px">
       <div style="font-weight:700; font-size:14px">${city}${country ? ", " + country : ""}</div>
 
       <div style="margin-top:8px">
@@ -140,29 +142,29 @@ function formatPopup(props, usiKey, usiValue) {
 
 
 // ===============================
-// 6) Load GeoJSON and render as circle markers
+// 6) Load GeoJSON and render
 // ===============================
-fetch("usi_cities_2025Q4.geojson")
+// IMPORTANT: match this filename to your repo
+const GEOJSON_FILE = "usi_cities_2025Q4v1.geojson";
+
+fetch(GEOJSON_FILE)
   .then((res) => {
     if (!res.ok) throw new Error(`Failed to load GeoJSON: ${res.status} ${res.statusText}`);
     return res.json();
   })
   .then((geojson) => {
-    // Detect USI key from the first feature
     const firstFeature = geojson?.features?.[0];
     const usiKey = pickIndexKey(firstFeature?.properties);
 
     if (!usiKey) {
       console.warn(
-        "Could not detect USI property key. " +
-        "Please make sure your GeoJSON has one of these fields:",
+        "Could not detect USI property key. Please ensure one of these fields exists:",
         INDEX_KEYS_CANDIDATES
       );
     } else {
       console.log("Detected USI property key:", usiKey);
     }
 
-    // Build the layer
     const layer = L.geoJSON(geojson, {
       pointToLayer: (feature, latlng) => {
         const props = feature.properties || {};
@@ -172,8 +174,8 @@ fetch("usi_cities_2025Q4.geojson")
 
         return L.circleMarker(latlng, {
           radius: getRadius(usiValue),
-          color: color,        // stroke
-          fillColor: color,    // fill
+          color: color,       // stroke
+          fillColor: color,   // fill
           fillOpacity: 0.78,
           weight: 1
         });
@@ -182,47 +184,42 @@ fetch("usi_cities_2025Q4.geojson")
       onEachFeature: (feature, marker) => {
         const props = feature.properties || {};
         const usiValue = usiKey ? toNumber(props[usiKey]) : null;
-        marker.bindPopup(formatPopup(props, usiKey, usiValue), { maxWidth: 320 });
+
+        marker.bindPopup(formatPopup(props, usiKey, usiValue), { maxWidth: 340 });
       }
     }).addTo(map);
 
-    // Fit map to data
+    // Fit map view to your data points
     const bounds = layer.getBounds();
     if (bounds.isValid()) {
       map.fitBounds(bounds, { padding: [20, 20] });
     }
 
-    // Quick summary in console: counts by category (nice sanity check)
+    // Console sanity check: category counts
     const counts = {
       Comfortable: 0,
       Stretched: 0,
       "High burden": 0,
       "Severe burden": 0,
       Unaffordable: 0,
+      Extreme: 0,
       Unknown: 0
     };
 
-    if (geojson?.features?.length) {
-      for (const f of geojson.features) {
-        const props = f.properties || {};
-        const usiValue = usiKey ? toNumber(props[usiKey]) : null;
-        const label = usiRating(usiValue);
-        counts[label] = (counts[label] ?? 0) + 1;
-      }
+    for (const f of (geojson?.features || [])) {
+      const props = f.properties || {};
+      const usiValue = usiKey ? toNumber(props[usiKey]) : null;
+      const label = usiRating(usiValue);
+      counts[label] = (counts[label] ?? 0) + 1;
     }
 
     console.log("USI category counts:", counts);
   })
   .catch((err) => {
     console.error(err);
-
-    // Common local-dev gotcha:
-    // If you open index.html by double-clicking (file://), fetch may be blocked.
-    // Use a local server (VS Code Live Server) or deploy to Cloudflare Pages.
     alert(
       "Failed to load the GeoJSON file.\n\n" +
-      "If you opened index.html directly (file://), your browser may block fetch().\n" +
-      "Use a local dev server (e.g. VS Code Live Server) or deploy to Cloudflare Pages.\n\n" +
-      "Check the console for details."
+      "Check that the filename in app.js matches your repo, and that the file exists in the root folder.\n\n" +
+      `Expected: ${GEOJSON_FILE}`
     );
   });

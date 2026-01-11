@@ -1,5 +1,18 @@
+<header class="topbar">
+  <div class="brand">
+    <div class="title">Urban Stress Index</div>
+    <div class="subtitle">Housing + food cost burden</div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="active">Map</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+</header>
+
 <!doctype html>
-<html lang="zh-HK">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,22 +34,54 @@
   <header class="topbar">
     <div class="brand">
       <div class="title">Urban Stress Index</div>
-      <div class="subtitle">Engel × 30% rule (prototype)</div>
+      <div class="subtitle">Housing + food cost burden (prototype)</div>
+    </div>
+
+    <div class="hint">
+      Tap a city to view score & status
     </div>
   </header>
 
   <main>
     <div id="map" aria-label="Map"></div>
 
-    <!-- Optional: Legend container (you can fill later in JS or HTML) -->
-    <div id="legend" class="legend" aria-label="Legend">
-      <div class="legend-title">Legend</div>
-      <div class="legend-row"><span class="swatch green"></span><span>Low</span></div>
-      <div class="legend-row"><span class="swatch yellow"></span><span>Moderate</span></div>
-      <div class="legend-row"><span class="swatch orange"></span><span>High</span></div>
-      <div class="legend-row"><span class="swatch red"></span><span>Very high</span></div>
-      <div class="legend-row"><span class="swatch black"></span><span>Extreme</span></div>
-    </div>
+    <aside class="legend" aria-label="Legend">
+      <div class="legend-title">Legend (USI)</div>
+
+      <div class="legend-row">
+        <span class="swatch green"></span>
+        <span class="legend-text">&lt; 30 — Comfortable</span>
+      </div>
+
+      <div class="legend-row">
+        <span class="swatch yellow"></span>
+        <span class="legend-text">30–35 — Stretched</span>
+      </div>
+
+      <div class="legend-row">
+        <span class="swatch orange"></span>
+        <span class="legend-text">35–40 — High burden</span>
+      </div>
+
+      <div class="legend-row">
+        <span class="swatch red"></span>
+        <span class="legend-text">40–45 — Severe burden</span>
+      </div>
+
+      <div class="legend-row">
+        <span class="swatch purple"></span>
+        <span class="legend-text">45–55 — Unaffordable</span>
+      </div>
+
+      <div class="legend-row">
+        <span class="swatch purple-dark"></span>
+        <span class="legend-text">&gt; 55 — Extreme</span>
+      </div>
+
+      <div class="legend-footnote">
+        USI is an indicative composite index for comparing city-level burden.
+      </div>
+    </aside>
   </main>
 
   <!-- Leaflet JS (CDN) -->

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology – USI Map</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">USI Map</div>
+
+    <nav class="nav">
+      <a class="nav-btn" href="index.html">Map</a>
+      <a class="nav-btn active" href="methodology.html">Methodology</a>
+      <a class="nav-btn" href="sources.html">Sources</a>
+      <a class="nav-btn" href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Methodology</h1>
+
+    <section>
+      <h2>Background</h2>
+      <p>
+        Understanding affordability in cities requires looking beyond prices alone.
+        Two long-standing concepts are commonly used to describe economic pressure on households:
+        <strong>Engel’s Index</strong> and the <strong>30% housing rule</strong>.
+      </p>
+      <p>
+        Each captures a different dimension of living costs. The Urban Stress Index (USI) builds on both.
+      </p>
+    </section>
+
+    <section>
+      <h2>Engel’s Index</h2>
+      <p>
+        <strong>Engel’s Index</strong> originates from Engel’s Law, which observes that as income increases,
+        the proportion of income spent on basic necessities — especially food — declines.
+      </p>
+      <ul>
+        <li>A higher Engel’s Index indicates that a larger share of income is required for essential consumption.</li>
+        <li>This suggests greater vulnerability to price shocks and limited discretionary capacity.</li>
+      </ul>
+      <p>
+        For decades, Engel’s Index has been used as a proxy for living standards, household stress,
+        and levels of economic development. However, it was developed in contexts where
+        <strong>housing costs were relatively stable</strong> and did not dominate household budgets.
+      </p>
+    </section>
+
+    <section>
+      <h2>The 30% Housing Rule</h2>
+      <p>The <strong>30% housing rule</strong> is a widely used benchmark in housing policy and urban planning.</p>
+      <blockquote>
+        A household spending more than 30% of its gross income on housing is considered housing-cost burdened.
+      </blockquote>
+      <p>
+        Once housing costs exceed a certain share of income, trade-offs emerge in food, healthcare, mobility, and savings.
+        Despite its simplicity, the 30% rule remains a practical signal of housing stress across cities and countries.
+      </p>
+    </section>
+
+    <section>
+      <h2>Housing as a Dominant Fixed Cost in Modern Cities</h2>
+      <p>
+        As societies urbanise and incomes rise, the structure of household expenditure changes.
+        In contemporary cities, food and basic consumption often scale gradually with income.
+        <strong>Housing costs, by contrast, are rigid, location-dependent, and increasingly detached from local wage growth.</strong>
+      </p>
+      <p>
+        Neither Engel’s Index nor the 30% rule alone fully captures this reality:
+      </p>
+      <ul>
+        <li>Engel’s Index underweights housing stress.</li>
+        <li>The 30% rule ignores essential non-housing consumption.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Rationale for the Urban Stress Index (USI)</h2>
+      <p>
+        The <strong>Urban Stress Index (USI)</strong> combines these two perspectives. By summing an Engel-style
+        <strong>essential food cost share</strong> and a <strong>housing burden component</strong>,
+        USI reflects the combined pressure of essential living needs and fixed housing costs relative to income.
+      </p>
+      <p>
+        The aim is not to predict individual hardship, but to provide a comparable, structural view of
+        cost-of-living pressure across cities.
+      </p>
+    </section>
+
+    <section>
+      <h2>Index Definition</h2>
+      <p>The Urban Stress Index (USI) is defined as:</p>
+      <pre><code>USI = Essential Food Cost Share + Housing Burden</code></pre>
+      <p>Both components are expressed as percentages of gross income.</p>
+
+      <h3>Essential Food Cost Share</h3>
+      <p>
+        This component follows the logic of Engel’s Index, representing the proportion of income required
+        to cover essential food cost for a single person.
+      </p>
+      <p>Rather than attempting to model full food cost budgets, the index uses a simplified proxy based on the following:</p>
+      <ul>
+        <li>prices from inexpensive restaurants</li>
+        <li>a weekly ratio of <strong>1 dine-out meal</strong> with <strong>5 home-cooked meals</strong></li>
+        <li>breakfast is assumed to count as <strong>0.5</strong> proportion of food</li>
+      </ul>
+      <p>The purpose is to capture baseline living pressure, not lifestyle-dependent spending.</p>
+
+      <h3>Housing Burden</h3>
+      <p>
+        The housing component represents the share of gross income required to rent a typical market-rate
+        one-bedroom unit in the city.
+      </p>
+      <ul>
+        <li>Housing is treated as a fixed cost</li>
+        <li>Housing is location-dependent</li>
+        <li>Housing is largely non-negotiable in the short term</li>
+      </ul>
+      <p>
+        This follows the logic of the 30% housing rule, while allowing the burden to scale continuously beyond the threshold.
+      </p>
+    </section>
+
+    <section>
+      <h2>Cost and Income Assumptions</h2>
+      <ul>
+        <li>Household type: <strong>single adult</strong></li>
+        <li>Housing type: <strong>market-rate one-bedroom rental</strong></li>
+        <li>Income metric: <strong>city-level average or median gross income</strong></li>
+        <li>All values reflect <strong>pre-tax income</strong> and typical market conditions</li>
+      </ul>
+
+      <p>The index does not account for:</p>
+      <ul>
+        <li>household size variation</li>
+        <li>shared accommodation</li>
+        <li>home ownership or subsidised housing</li>
+        <li>individual tax situations or government benefits</li>
+      </ul>
+
+      <p>
+        USI is therefore best interpreted as a <strong>structural indicator</strong>, not a personalised affordability score.
+      </p>
+    </section>
+
+    <section>
+      <h2>Classification Thresholds</h2>
+      <ul>
+        <li><strong>&lt; 30</strong> — Comfortable</li>
+        <li><strong>30–35</strong> — Stretched</li>
+        <li><strong>35–40</strong> — High burden</li>
+        <li><strong>40–45</strong> — Severe burden</li>
+        <li><strong>45–60</strong> — Unaffordable</li>
+        <li><strong>&ge; 60</strong> — Extreme (structural breakdown)</li>
+      </ul>
+      <p>
+        The &ge;60 category represents situations where essential consumption and housing costs together dominate income,
+        leaving minimal room for discretionary spending, savings, or financial resilience.
+      </p>
+      <p>
+        These thresholds are interpretive, designed to distinguish different types of cost pressure rather than impose rigid economic rules.
+      </p>
+    </section>
+
+    <section>
+      <h2>Interpretation Guidelines</h2>
+      <ul>
+        <li>A higher USI indicates greater structural pressure on everyday urban living.</li>
+        <li>Cities with similar USI values may still differ in quality of life, public services, or social safety nets.</li>
+        <li>The index is most useful for relative comparison across cities and regions.</li>
+      </ul>
+      <p>USI should be read as a signal, not a verdict.</p>
+    </section>
+
+    <section>
+      <h2>Limitations</h2>
+      <ul>
+        <li>City-level averages may mask intra-city inequality.</li>
+        <li>Cost data represent a snapshot in time and may lag rapid market changes.</li>
+        <li>Informal housing arrangements and cultural consumption differences are not captured.</li>
+        <li>The index simplifies complex household decisions for the sake of comparability.</li>
+      </ul>
+      <p>These limitations are accepted trade-offs to preserve transparency and consistency.</p>
+    </section>
+
+    <section>
+      <h2>Versioning and Scope</h2>
+      <p>This methodology applies to <strong>USI v1</strong>.</p>
+      <p>
+        Future versions may refine consumption proxies, adjust thresholds, or introduce sensitivity analysis.
+        Methodological stability is prioritised to ensure comparability over time.
+      </p>
+      <p><em>
+        USI is not about how cheaply someone can live in a city, but about how much pressure a city places on living by default.
+      </em></p>
+    </section>
+  </main>
+</body>
+</html>
