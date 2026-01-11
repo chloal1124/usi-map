@@ -138,28 +138,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -87.6298,
-          41.8781
-        ]
-      },
-      "properties": {
-        "city": "Chicago",
-        "country": "USA",
-        "average_monthly_salary": 5437.5,
-        "monthly_rent_1br": 1957.0,
-        "monthly_food": 520.0,
-        "engels_index": 9.563,
-        "rental_index": 35.991,
-        "usi": 45.554,
-        "rating": "Extreme",
-        "as_of_date": "2025-12"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -114.0719,
           51.0447
         ]
