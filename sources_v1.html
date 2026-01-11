@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sources – USI Map</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">USI Map</div>
+
+    <nav class="nav">
+      <a class="nav-btn" href="index.html">Map</a>
+      <a class="nav-btn" href="methodology.html">Methodology</a>
+      <a class="nav-btn active" href="sources.html">Sources</a>
+      <a class="nav-btn" href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Sources</h1>
+
+    <p>
+      This page lists the public data sources used to construct USI v1.
+      Sources are grouped by country and by input type (housing, income, inflation adjustment, food proxy).
+      “As-of” dates reflect the reference period used in the dataset at the time of calculation.
+    </p>
+
+    <section>
+      <h2>Canada</h2>
+
+      <h3>Housing (rent)</h3>
+      <ul>
+        <li>
+          <a href="https://rentals.ca/national-rent-report#municipal-overview" target="_blank" rel="noopener noreferrer">
+            Rentals.ca National Rent Report – Municipal Overview
+          </a>
+          <div class="note">
+            Used for 1-bedroom asking rent (reference: Nov 2025).
+          </div>
+        </li>
+      </ul>
+
+      <h3>Income</h3>
+      <ul>
+        <li>
+          <a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110024001&pickMembers%5B0%5D=1.17&pickMembers%5B1%5D=2.1&pickMembers%5B2%5D=3.1&cubeTimeFrame.startYear=2019&cubeTimeFrame.endYear=2023&referencePeriods=20190101%2C20230101"
+             target="_blank" rel="noopener noreferrer">
+            Statistics Canada – Table 11-10-0240-01 (Distribution of employment income)
+          </a>
+          <div class="note">
+            Used for median employment income for selected CMAs (reference year: 2023).
+          </div>
+        </li>
+      </ul>
+
+      <h3>Inflation adjustment</h3>
+      <ul>
+        <li>
+          <a href="https://www.bankofcanada.ca/rates/price-indexes/cpi/" target="_blank" rel="noopener noreferrer">
+            Bank of Canada – Consumer Price Index (CPI)
+          </a>
+          <div class="note">
+            Used to adjust income levels across time (e.g., May 2023 → May 2025).
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Australia</h2>
+
+      <h3>Housing (rent proxy)</h3>
+      <ul>
+        <li>
+          <a href="https://www.domain.com.au/research/rental-report/september-2025/" target="_blank" rel="noopener noreferrer">
+            Domain – Rental Report (September 2025)
+          </a>
+          <div class="note">
+            Housing costs are proxied using median advertised rents for units/apartments in each capital city,
+            which include a mix of studio, one-bedroom, and two-bedroom dwellings. This is intended to reflect
+            a typical rental option available to single-person households in the Australian rental market.
+          </div>
+        </li>
+      </ul>
+
+      <h3>Income</h3>
+      <ul>
+        <li>
+          <a href="https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia/may-2025"
+             target="_blank" rel="noopener noreferrer">
+            Australian Bureau of Statistics – Average Weekly Earnings (May 2025)
+          </a>
+          <div class="note">
+            Median weekly ordinary time earnings used. State-level earnings are assumed to approximate the capital-city average.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>New Zealand</h2>
+
+      <h3>Housing (rent)</h3>
+      <ul>
+        <li>
+          <a href="https://www.tenancy.govt.nz/rent-bond-and-bills/market-rent/" target="_blank" rel="noopener noreferrer">
+            Tenancy Services (NZ) – Market Rent
+          </a>
+          <div class="note">
+            Used for 1-bedroom market rent by region/city.
+          </div>
+        </li>
+      </ul>
+
+      <h3>Income</h3>
+      <ul>
+        <li>
+          <a href="https://www.stats.govt.nz/information-releases/labour-market-statistics-income-june-2025-quarter/"
+             target="_blank" rel="noopener noreferrer">
+            Stats NZ – Labour market statistics (income): June 2025 quarter
+          </a>
+          <div class="note">
+            Used for median weekly earnings. Regional medians are applied for Auckland, Wellington, and Canterbury (Christchurch proxy).
+          </div>
+        </li>
+        <li>
+          <a href="https://explore.data.stats.govt.nz/vis?fs[0]=Economy%2C0%7CIncome%23CAT_INCOME%23&pg=0&fc=Economy&bp=true&snb=16&df[ds]=ds-nsiws-disseminate&df[id]=INC_INC_001&df[ag]=STATSNZ&df[vs]=1.0&dq=.98.2%2B98.98.98.&to[TIME]=false"
+             target="_blank" rel="noopener noreferrer">
+            Stats NZ Data Explorer – INC_INC_001 (linked query)
+          </a>
+          <div class="note">
+            Data Explorer query used for regional median weekly earnings extraction (as used in model build).
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>United States</h2>
+
+      <h3>Income</h3>
+      <ul>
+        <li>
+          <a href="https://www.bls.gov/web/cewqtr.supp.toc.htm" target="_blank" rel="noopener noreferrer">
+            U.S. Bureau of Labor Statistics – County Employment and Wages (QCEW), Q2 2025
+          </a>
+          <div class="note">
+            Used for average weekly wage at county level (reference: Q2 2025).
+          </div>
+        </li>
+      </ul>
+
+      <h3>Housing (rent)</h3>
+      <ul>
+        <li>
+          <a href="https://www.zillow.com/rental-manager/market-trends/" target="_blank" rel="noopener noreferrer">
+            Zillow Rental Manager – Market Trends
+          </a>
+          <div class="note">
+            Used for 1-bedroom apartment and condo rent levels for selected markets.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Food cost proxy (all countries)</h2>
+
+      <ul>
+        <li>
+          <a href="https://www.numbeo.com/cost-of-living/" target="_blank" rel="noopener noreferrer">
+            Numbeo – City Cost of Living (Meal at an Inexpensive Restaurant)
+          </a>
+          <div class="note">
+            Food costs are retrieved from Numbeo using “Meal at an Inexpensive Restaurant” as the anchor price.
+            Additional assumptions and sensitivity discussions will be posted in later updates.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes on reproducibility</h2>
+      <ul>
+        <li>All sources are public. Reference periods (month/quarter/year) are recorded alongside each dataset above.</li>
+        <li>Where possible, official statistical agencies are preferred for income data.</li>
+        <li>Private-sector rent datasets are used when official city-level rent series are not consistently available across countries.</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
