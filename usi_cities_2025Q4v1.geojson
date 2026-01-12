@@ -6,28 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.3832,
-          43.6532
-        ]
-      },
-      "properties": {
-        "city": "Toronto",
-        "country": "Canada",
-        "average_monthly_salary": 4795.75,
-        "monthly_rent_1br": 2222.0,
-        "monthly_food": 650.0,
-        "engels_index": 13.554,
-        "rental_index": 46.333,
-        "usi": 59.886,
-        "rating": "Extreme",
-        "as_of_date": "2025-12"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -63.5752,
           44.6488
         ]
@@ -35,14 +13,14 @@
       "properties": {
         "city": "Halifax",
         "country": "Canada",
-        "average_monthly_salary": 4953.92,
+        "average_monthly_salary": 3508.81,
         "monthly_rent_1br": 2029.0,
         "monthly_food": 650.0,
-        "engels_index": 13.121,
-        "rental_index": 40.957,
-        "usi": 54.078,
+        "engels_index": 18.525,
+        "rental_index": 57.826,
+        "usi": 76.351,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -57,14 +35,14 @@
       "properties": {
         "city": "Vancouver",
         "country": "Canada",
-        "average_monthly_salary": 5792.67,
+        "average_monthly_salary": 4250.72,
         "monthly_rent_1br": 2407.0,
         "monthly_food": 715.0,
-        "engels_index": 12.343,
-        "rental_index": 41.553,
-        "usi": 53.896,
+        "engels_index": 16.821,
+        "rental_index": 56.626,
+        "usi": 73.446,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -72,21 +50,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.5674,
-          45.5019
+          -79.3832,
+          43.6532
         ]
       },
       "properties": {
-        "city": "Montreal",
+        "city": "Toronto",
         "country": "Canada",
-        "average_monthly_salary": 4770.5,
-        "monthly_rent_1br": 1715.0,
-        "monthly_food": 611.0,
-        "engels_index": 12.808,
-        "rental_index": 35.95,
-        "usi": 48.758,
+        "average_monthly_salary": 3927.77,
+        "monthly_rent_1br": 2222.0,
+        "monthly_food": 650.0,
+        "engels_index": 16.549,
+        "rental_index": 56.572,
+        "usi": 73.12,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -101,14 +79,14 @@
       "properties": {
         "city": "Ottawa",
         "country": "Canada",
-        "average_monthly_salary": 5416.25,
+        "average_monthly_salary": 4084.88,
         "monthly_rent_1br": 1951.0,
         "monthly_food": 650.0,
-        "engels_index": 12.001,
-        "rental_index": 36.021,
-        "usi": 48.022,
+        "engels_index": 15.912,
+        "rental_index": 47.761,
+        "usi": 63.674,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -116,43 +94,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -97.1384,
-          49.8951
+          -73.5674,
+          45.5019
         ]
       },
       "properties": {
-        "city": "Winnipeg",
+        "city": "Montreal",
         "country": "Canada",
-        "average_monthly_salary": 4252.58,
-        "monthly_rent_1br": 1404.0,
-        "monthly_food": 536.12,
-        "engels_index": 12.607,
-        "rental_index": 33.015,
-        "usi": 45.622,
+        "average_monthly_salary": 3892.86,
+        "monthly_rent_1br": 1715.0,
+        "monthly_food": 611.0,
+        "engels_index": 15.695,
+        "rental_index": 44.055,
+        "usi": 59.75,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.6298,
-          41.8781
-        ]
-      },
-      "properties": {
-        "city": "Chicago",
-        "country": "USA",
-        "average_monthly_salary": 5437.5,
-        "monthly_rent_1br": 1957.0,
-        "monthly_food": 520.0,
-        "engels_index": 9.563,
-        "rental_index": 35.991,
-        "usi": 45.554,
-        "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -167,14 +123,58 @@
       "properties": {
         "city": "Calgary",
         "country": "Canada",
-        "average_monthly_salary": 4853.58,
+        "average_monthly_salary": 3927.77,
         "monthly_rent_1br": 1539.0,
         "monthly_food": 650.0,
-        "engels_index": 13.392,
-        "rental_index": 31.709,
-        "usi": 45.101,
+        "engels_index": 16.549,
+        "rental_index": 39.183,
+        "usi": 55.731,
         "rating": "Extreme",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.1384,
+          49.8951
+        ]
+      },
+      "properties": {
+        "city": "Winnipeg",
+        "country": "Canada",
+        "average_monthly_salary": 3735.75,
+        "monthly_rent_1br": 1404.0,
+        "monthly_food": 536.12,
+        "engels_index": 14.351,
+        "rental_index": 37.583,
+        "usi": 51.934,
+        "rating": "Extreme",
+        "as_of_date": "2025-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.208,
+          46.8139
+        ]
+      },
+      "properties": {
+        "city": "Quebec City",
+        "country": "Canada",
+        "average_monthly_salary": 4049.97,
+        "monthly_rent_1br": 1318.0,
+        "monthly_food": 650.0,
+        "engels_index": 16.05,
+        "rental_index": 32.543,
+        "usi": 48.593,
+        "rating": "Extreme",
+        "as_of_date": "2025-05"
       }
     },
     {
@@ -189,14 +189,14 @@
       "properties": {
         "city": "Edmonton",
         "country": "Canada",
-        "average_monthly_salary": 4330.42,
+        "average_monthly_salary": 4573.67,
         "monthly_rent_1br": 1289.0,
         "monthly_food": 650.0,
-        "engels_index": 15.01,
-        "rental_index": 29.766,
-        "usi": 44.776,
+        "engels_index": 14.212,
+        "rental_index": 28.183,
+        "usi": 42.395,
         "rating": "Severe burden",
-        "as_of_date": "2025-12"
+        "as_of_date": "2025-05"
       }
     },
     {
