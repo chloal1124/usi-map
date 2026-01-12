@@ -16,9 +16,9 @@
         "average_monthly_salary": 3508.81,
         "monthly_rent_1br": 2029.0,
         "monthly_food": 650.0,
-        "engels_index": 18.525,
-        "rental_index": 57.826,
-        "usi": 76.351,
+        "engels_index": 18.52,
+        "rental_index": 57.83,
+        "usi": 76.35,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -38,9 +38,9 @@
         "average_monthly_salary": 4250.72,
         "monthly_rent_1br": 2407.0,
         "monthly_food": 715.0,
-        "engels_index": 16.821,
-        "rental_index": 56.626,
-        "usi": 73.446,
+        "engels_index": 16.82,
+        "rental_index": 56.63,
+        "usi": 73.45,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -60,8 +60,8 @@
         "average_monthly_salary": 3927.77,
         "monthly_rent_1br": 2222.0,
         "monthly_food": 650.0,
-        "engels_index": 16.549,
-        "rental_index": 56.572,
+        "engels_index": 16.55,
+        "rental_index": 56.57,
         "usi": 73.12,
         "rating": "Extreme",
         "as_of_date": "2025-05"
@@ -82,9 +82,9 @@
         "average_monthly_salary": 4084.88,
         "monthly_rent_1br": 1951.0,
         "monthly_food": 650.0,
-        "engels_index": 15.912,
-        "rental_index": 47.761,
-        "usi": 63.674,
+        "engels_index": 15.91,
+        "rental_index": 47.76,
+        "usi": 63.67,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -104,8 +104,8 @@
         "average_monthly_salary": 3892.86,
         "monthly_rent_1br": 1715.0,
         "monthly_food": 611.0,
-        "engels_index": 15.695,
-        "rental_index": 44.055,
+        "engels_index": 15.7,
+        "rental_index": 44.05,
         "usi": 59.75,
         "rating": "Extreme",
         "as_of_date": "2025-05"
@@ -126,9 +126,9 @@
         "average_monthly_salary": 3927.77,
         "monthly_rent_1br": 1539.0,
         "monthly_food": 650.0,
-        "engels_index": 16.549,
-        "rental_index": 39.183,
-        "usi": 55.731,
+        "engels_index": 16.55,
+        "rental_index": 39.18,
+        "usi": 55.73,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -148,9 +148,9 @@
         "average_monthly_salary": 3735.75,
         "monthly_rent_1br": 1404.0,
         "monthly_food": 536.12,
-        "engels_index": 14.351,
-        "rental_index": 37.583,
-        "usi": 51.934,
+        "engels_index": 14.35,
+        "rental_index": 37.58,
+        "usi": 51.93,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -171,8 +171,8 @@
         "monthly_rent_1br": 1318.0,
         "monthly_food": 650.0,
         "engels_index": 16.05,
-        "rental_index": 32.543,
-        "usi": 48.593,
+        "rental_index": 32.54,
+        "usi": 48.59,
         "rating": "Extreme",
         "as_of_date": "2025-05"
       }
@@ -192,9 +192,9 @@
         "average_monthly_salary": 4573.67,
         "monthly_rent_1br": 1289.0,
         "monthly_food": 650.0,
-        "engels_index": 14.212,
-        "rental_index": 28.183,
-        "usi": 42.395,
+        "engels_index": 14.21,
+        "rental_index": 28.18,
+        "usi": 42.4,
         "rating": "Severe burden",
         "as_of_date": "2025-05"
       }
@@ -211,12 +211,12 @@
       "properties": {
         "city": "Christchurch",
         "country": "New Zealand",
-        "average_monthly_salary": 6547.666666666667,
+        "average_monthly_salary": 6547.67,
         "monthly_rent_1br": 1950.0,
         "monthly_food": 780.0,
-        "engels_index": 11.912640635340834,
-        "rental_index": 29.781601588352085,
-        "usi": 41.69424222369292,
+        "engels_index": 11.91,
+        "rental_index": 29.78,
+        "usi": 41.69,
         "rating": "Severe burden",
         "as_of_date": "2025-09"
       }
@@ -236,9 +236,9 @@
         "average_monthly_salary": 7254.0,
         "monthly_rent_1br": 1950.0,
         "monthly_food": 650.0,
-        "engels_index": 8.960573476702509,
-        "rental_index": 26.881720430107524,
-        "usi": 35.842293906810035,
+        "engels_index": 8.96,
+        "rental_index": 26.88,
+        "usi": 35.84,
         "rating": "High burden",
         "as_of_date": "2025-09"
       }
@@ -258,9 +258,9 @@
         "average_monthly_salary": 7449.0,
         "monthly_rent_1br": 1755.0,
         "monthly_food": 754.0,
-        "engels_index": 10.12216404886562,
-        "rental_index": 23.56020942408377,
-        "usi": 33.682373472949386,
+        "engels_index": 10.12,
+        "rental_index": 23.56,
+        "usi": 33.68,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -280,9 +280,9 @@
         "average_monthly_salary": 8892.0,
         "monthly_rent_1br": 2925.0,
         "monthly_food": 780.0,
-        "engels_index": 8.771929824561402,
-        "rental_index": 32.89473684210527,
-        "usi": 41.66666666666667,
+        "engels_index": 8.77,
+        "rental_index": 32.89,
+        "usi": 41.67,
         "rating": "Severe burden",
         "as_of_date": "2025-09"
       }
@@ -299,12 +299,12 @@
       "properties": {
         "city": "Darwin",
         "country": "Australia",
-        "average_monthly_salary": 8350.333333333334,
+        "average_monthly_salary": 8350.33,
         "monthly_rent_1br": 2262.0,
         "monthly_food": 1040.0,
-        "engels_index": 12.454592631032693,
-        "rental_index": 27.088738972496106,
-        "usi": 39.5433316035288,
+        "engels_index": 12.45,
+        "rental_index": 27.09,
+        "usi": 39.54,
         "rating": "High burden",
         "as_of_date": "2025-09"
       }
@@ -321,12 +321,12 @@
       "properties": {
         "city": "Brisbane",
         "country": "Australia",
-        "average_monthly_salary": 8466.033333333335,
+        "average_monthly_salary": 8466.03,
         "monthly_rent_1br": 2457.0,
         "monthly_food": 728.0,
-        "engels_index": 8.599068434252954,
-        "rental_index": 29.02185596560372,
-        "usi": 37.620924399856676,
+        "engels_index": 8.6,
+        "rental_index": 29.02,
+        "usi": 37.62,
         "rating": "High burden",
         "as_of_date": "2025-09"
       }
@@ -346,9 +346,9 @@
         "average_monthly_salary": 8491.6,
         "monthly_rent_1br": 2242.5,
         "monthly_food": 650.0,
-        "engels_index": 7.654623392529087,
-        "rental_index": 26.408450704225352,
-        "usi": 34.063074096754434,
+        "engels_index": 7.65,
+        "rental_index": 26.41,
+        "usi": 34.06,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -365,12 +365,12 @@
       "properties": {
         "city": "Hobart",
         "country": "Australia",
-        "average_monthly_salary": 7769.666666666667,
+        "average_monthly_salary": 7769.67,
         "monthly_rent_1br": 1911.0,
         "monthly_food": 689.0,
-        "engels_index": 8.86781929726715,
-        "rental_index": 24.59564974902398,
-        "usi": 33.46346904629113,
+        "engels_index": 8.87,
+        "rental_index": 24.6,
+        "usi": 33.46,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -387,12 +387,12 @@
       "properties": {
         "city": "Adelaide",
         "country": "Australia",
-        "average_monthly_salary": 8207.766666666666,
+        "average_monthly_salary": 8207.77,
         "monthly_rent_1br": 2028.0,
         "monthly_food": 650.0,
-        "engels_index": 7.919328440948208,
-        "rental_index": 24.708304735758407,
-        "usi": 32.62763317670662,
+        "engels_index": 7.92,
+        "rental_index": 24.71,
+        "usi": 32.63,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -409,12 +409,12 @@
       "properties": {
         "city": "Perth",
         "country": "Australia",
-        "average_monthly_salary": 9337.033333333333,
+        "average_monthly_salary": 9337.03,
         "monthly_rent_1br": 2340.0,
         "monthly_food": 650.0,
-        "engels_index": 6.961525966491855,
-        "rental_index": 25.06149347937068,
-        "usi": 32.02301944586253,
+        "engels_index": 6.96,
+        "rental_index": 25.06,
+        "usi": 32.02,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -431,12 +431,12 @@
       "properties": {
         "city": "Canberra",
         "country": "Australia",
-        "average_monthly_salary": 9672.866666666667,
+        "average_monthly_salary": 9672.87,
         "monthly_rent_1br": 2262.0,
         "monthly_food": 650.0,
-        "engels_index": 6.719827972403906,
-        "rental_index": 23.385001343965595,
-        "usi": 30.104829316369504,
+        "engels_index": 6.72,
+        "rental_index": 23.39,
+        "usi": 30.1,
         "rating": "Stretched",
         "as_of_date": "2025-09"
       }
@@ -456,9 +456,9 @@
         "average_monthly_salary": 6543.6,
         "monthly_rent_1br": 2425.0,
         "monthly_food": 650.0,
-        "engels_index": 9.933370010391833,
-        "rental_index": 37.05911119261568,
-        "usi": 46.992481203007515,
+        "engels_index": 9.93,
+        "rental_index": 37.06,
+        "usi": 46.99,
         "rating": "Extreme",
         "as_of_date": "2025-06"
       }
@@ -478,9 +478,9 @@
         "average_monthly_salary": 5997.6,
         "monthly_rent_1br": 1942.0,
         "monthly_food": 780.0,
-        "engels_index": 13.005202080832332,
-        "rental_index": 32.37961851407229,
-        "usi": 45.384820594904625,
+        "engels_index": 13.01,
+        "rental_index": 32.38,
+        "usi": 45.38,
         "rating": "Extreme",
         "as_of_date": "2025-06"
       }
@@ -497,12 +497,12 @@
       "properties": {
         "city": "Boston",
         "country": "USA",
-        "average_monthly_salary": 8135.400000000001,
+        "average_monthly_salary": 8135.4,
         "monthly_rent_1br": 2466.0,
         "monthly_food": 650.0,
-        "engels_index": 7.989773090444231,
-        "rental_index": 30.31196990928534,
-        "usi": 38.301742999729576,
+        "engels_index": 7.99,
+        "rental_index": 30.31,
+        "usi": 38.3,
         "rating": "High burden",
         "as_of_date": "2025-06"
       }
@@ -519,12 +519,12 @@
       "properties": {
         "city": "Los Angeles",
         "country": "USA",
-        "average_monthly_salary": 6560.400000000001,
+        "average_monthly_salary": 6560.4,
         "monthly_rent_1br": 1846.0,
         "monthly_food": 650.0,
-        "engels_index": 9.90793244314371,
-        "rental_index": 28.138528138528134,
-        "usi": 38.04646058167185,
+        "engels_index": 9.91,
+        "rental_index": 28.14,
+        "usi": 38.05,
         "rating": "High burden",
         "as_of_date": "2025-06"
       }
@@ -541,12 +541,12 @@
       "properties": {
         "city": "Orlando",
         "country": "USA",
-        "average_monthly_salary": 5195.400000000001,
+        "average_monthly_salary": 5195.4,
         "monthly_rent_1br": 1439.0,
         "monthly_food": 520.0,
-        "engels_index": 10.008853986218577,
-        "rental_index": 27.697578627247175,
-        "usi": 37.70643261346576,
+        "engels_index": 10.01,
+        "rental_index": 27.7,
+        "usi": 37.71,
         "rating": "High burden",
         "as_of_date": "2025-06"
       }
@@ -566,9 +566,9 @@
         "average_monthly_salary": 5178.6,
         "monthly_rent_1br": 1373.0,
         "monthly_food": 494.0,
-        "engels_index": 9.539257714440195,
-        "rental_index": 26.512957169891475,
-        "usi": 36.05221488433167,
+        "engels_index": 9.54,
+        "rental_index": 26.51,
+        "usi": 36.05,
         "rating": "High burden",
         "as_of_date": "2025-06"
       }
@@ -585,12 +585,12 @@
       "properties": {
         "city": "Tampa",
         "country": "USA",
-        "average_monthly_salary": 5615.400000000001,
+        "average_monthly_salary": 5615.4,
         "monthly_rent_1br": 1410.0,
         "monthly_food": 520.0,
-        "engels_index": 9.260248602058624,
-        "rental_index": 25.109520247889726,
-        "usi": 34.36976884994835,
+        "engels_index": 9.26,
+        "rental_index": 25.11,
+        "usi": 34.37,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -610,9 +610,9 @@
         "average_monthly_salary": 6165.6,
         "monthly_rent_1br": 1462.0,
         "monthly_food": 650.0,
-        "engels_index": 10.542364084598416,
-        "rental_index": 23.71220967951213,
-        "usi": 34.254573764110546,
+        "engels_index": 10.54,
+        "rental_index": 23.71,
+        "usi": 34.25,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -632,9 +632,9 @@
         "average_monthly_salary": 11844.0,
         "monthly_rent_1br": 3390.0,
         "monthly_food": 650.0,
-        "engels_index": 5.4880108071597435,
-        "rental_index": 28.622087132725433,
-        "usi": 34.11009793988518,
+        "engels_index": 5.49,
+        "rental_index": 28.62,
+        "usi": 34.11,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -651,12 +651,12 @@
       "properties": {
         "city": "Washington DC",
         "country": "USA",
-        "average_monthly_salary": 7715.400000000001,
+        "average_monthly_salary": 7715.4,
         "monthly_rent_1br": 1950.0,
         "monthly_food": 650.0,
-        "engels_index": 8.424709023511417,
-        "rental_index": 25.274127070534252,
-        "usi": 33.69883609404567,
+        "engels_index": 8.42,
+        "rental_index": 25.27,
+        "usi": 33.7,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -676,9 +676,9 @@
         "average_monthly_salary": 6337.8,
         "monthly_rent_1br": 1606.0,
         "monthly_food": 520.0,
-        "engels_index": 8.204739815077787,
-        "rental_index": 25.34002335195178,
-        "usi": 33.544763167029565,
+        "engels_index": 8.2,
+        "rental_index": 25.34,
+        "usi": 33.54,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -698,9 +698,9 @@
         "average_monthly_salary": 5787.6,
         "monthly_rent_1br": 1393.0,
         "monthly_food": 468.0,
-        "engels_index": 8.086253369272237,
-        "rental_index": 24.06869859700048,
-        "usi": 32.15495196627272,
+        "engels_index": 8.09,
+        "rental_index": 24.07,
+        "usi": 32.15,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -717,12 +717,12 @@
       "properties": {
         "city": "Kansas City",
         "country": "USA",
-        "average_monthly_salary": 5510.400000000001,
+        "average_monthly_salary": 5510.4,
         "monthly_rent_1br": 1103.0,
         "monthly_food": 637.0,
-        "engels_index": 11.559959349593495,
-        "rental_index": 20.01669570267131,
-        "usi": 31.576655052264808,
+        "engels_index": 11.56,
+        "rental_index": 20.02,
+        "usi": 31.58,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -739,12 +739,12 @@
       "properties": {
         "city": "Portland",
         "country": "USA",
-        "average_monthly_salary": 6350.400000000001,
+        "average_monthly_salary": 6350.4,
         "monthly_rent_1br": 1374.0,
         "monthly_food": 572.0,
-        "engels_index": 9.007306626354245,
-        "rental_index": 21.636432350718064,
-        "usi": 30.64373897707231,
+        "engels_index": 9.01,
+        "rental_index": 21.64,
+        "usi": 30.64,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -761,12 +761,12 @@
       "properties": {
         "city": "Nashville",
         "country": "USA",
-        "average_monthly_salary": 5972.400000000001,
+        "average_monthly_salary": 5972.4,
         "monthly_rent_1br": 1410.0,
         "monthly_food": 416.0,
-        "engels_index": 6.965374053981649,
-        "rental_index": 23.608599557966645,
-        "usi": 30.57397361194829,
+        "engels_index": 6.97,
+        "rental_index": 23.61,
+        "usi": 30.57,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -786,9 +786,9 @@
         "average_monthly_salary": 5901.0,
         "monthly_rent_1br": 1331.0,
         "monthly_food": 468.0,
-        "engels_index": 7.930859176410777,
-        "rental_index": 22.555499067954585,
-        "usi": 30.486358244365363,
+        "engels_index": 7.93,
+        "rental_index": 22.56,
+        "usi": 30.49,
         "rating": "Stretched",
         "as_of_date": "2025-06"
       }
@@ -808,9 +808,9 @@
         "average_monthly_salary": 5674.2,
         "monthly_rent_1br": 1159.0,
         "monthly_food": 520.0,
-        "engels_index": 9.164287476648692,
-        "rental_index": 20.42578689506891,
-        "usi": 29.590074371717602,
+        "engels_index": 9.16,
+        "rental_index": 20.43,
+        "usi": 29.59,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -827,12 +827,12 @@
       "properties": {
         "city": "Boulder",
         "country": "USA",
-        "average_monthly_salary": 7732.200000000001,
+        "average_monthly_salary": 7732.2,
         "monthly_rent_1br": 1723.0,
         "monthly_food": 520.0,
-        "engels_index": 6.725123509479837,
-        "rental_index": 22.283438090064923,
-        "usi": 29.00856159954476,
+        "engels_index": 6.73,
+        "rental_index": 22.28,
+        "usi": 29.01,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -852,9 +852,9 @@
         "average_monthly_salary": 5968.2,
         "monthly_rent_1br": 1185.0,
         "monthly_food": 520.0,
-        "engels_index": 8.712844743808853,
-        "rental_index": 19.855232733487487,
-        "usi": 28.568077477296338,
+        "engels_index": 8.71,
+        "rental_index": 19.86,
+        "usi": 28.57,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -871,12 +871,12 @@
       "properties": {
         "city": "Salt Lake City",
         "country": "USA",
-        "average_monthly_salary": 6140.400000000001,
+        "average_monthly_salary": 6140.4,
         "monthly_rent_1br": 1264.0,
         "monthly_food": 468.0,
-        "engels_index": 7.621653312487784,
-        "rental_index": 20.58497817731744,
-        "usi": 28.206631489805222,
+        "engels_index": 7.62,
+        "rental_index": 20.58,
+        "usi": 28.21,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -896,9 +896,9 @@
         "average_monthly_salary": 6039.6,
         "monthly_rent_1br": 1179.0,
         "monthly_food": 520.0,
-        "engels_index": 8.609841711371613,
-        "rental_index": 19.521160341744483,
-        "usi": 28.1310020531161,
+        "engels_index": 8.61,
+        "rental_index": 19.52,
+        "usi": 28.13,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -915,12 +915,12 @@
       "properties": {
         "city": "Denver",
         "country": "USA",
-        "average_monthly_salary": 7106.400000000001,
+        "average_monthly_salary": 7106.4,
         "monthly_rent_1br": 1471.0,
         "monthly_food": 520.0,
-        "engels_index": 7.317347742879657,
-        "rental_index": 20.69965101879995,
-        "usi": 28.016998761679613,
+        "engels_index": 7.32,
+        "rental_index": 20.7,
+        "usi": 28.02,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -940,9 +940,9 @@
         "average_monthly_salary": 6199.2,
         "monthly_rent_1br": 1213.0,
         "monthly_food": 494.0,
-        "engels_index": 7.968770163892115,
-        "rental_index": 19.567040908504325,
-        "usi": 27.535811072396438,
+        "engels_index": 7.97,
+        "rental_index": 19.57,
+        "usi": 27.54,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -962,9 +962,9 @@
         "average_monthly_salary": 5682.6,
         "monthly_rent_1br": 1044.0,
         "monthly_food": 520.0,
-        "engels_index": 9.150740858057931,
-        "rental_index": 18.371872030408614,
-        "usi": 27.522612888466547,
+        "engels_index": 9.15,
+        "rental_index": 18.37,
+        "usi": 27.52,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -984,9 +984,9 @@
         "average_monthly_salary": 6384.0,
         "monthly_rent_1br": 1261.0,
         "monthly_food": 494.0,
-        "engels_index": 7.738095238095238,
-        "rental_index": 19.75250626566416,
-        "usi": 27.4906015037594,
+        "engels_index": 7.74,
+        "rental_index": 19.75,
+        "usi": 27.49,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1006,9 +1006,9 @@
         "average_monthly_salary": 5124.0,
         "monthly_rent_1br": 939.0,
         "monthly_food": 468.0,
-        "engels_index": 9.133489461358314,
-        "rental_index": 18.32552693208431,
-        "usi": 27.459016393442624,
+        "engels_index": 9.13,
+        "rental_index": 18.33,
+        "usi": 27.46,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1025,12 +1025,12 @@
       "properties": {
         "city": "Cleveland",
         "country": "USA",
-        "average_monthly_salary": 5468.400000000001,
+        "average_monthly_salary": 5468.4,
         "monthly_rent_1br": 1007.0,
         "monthly_food": 481.0,
-        "engels_index": 8.795991514885523,
-        "rental_index": 18.41489283885597,
-        "usi": 27.210884353741495,
+        "engels_index": 8.8,
+        "rental_index": 18.41,
+        "usi": 27.21,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1050,9 +1050,9 @@
         "average_monthly_salary": 9227.4,
         "monthly_rent_1br": 1800.0,
         "monthly_food": 650.0,
-        "engels_index": 7.044237813468583,
-        "rental_index": 19.507120098836076,
-        "usi": 26.551357912304656,
+        "engels_index": 7.04,
+        "rental_index": 19.51,
+        "usi": 26.55,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1072,9 +1072,9 @@
         "average_monthly_salary": 7068.6,
         "monthly_rent_1br": 1332.0,
         "monthly_food": 520.0,
-        "engels_index": 7.356477944713238,
-        "rental_index": 18.84390119684237,
-        "usi": 26.20037914155561,
+        "engels_index": 7.36,
+        "rental_index": 18.84,
+        "usi": 26.2,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1094,9 +1094,9 @@
         "average_monthly_salary": 6447.0,
         "monthly_rent_1br": 1126.0,
         "monthly_food": 520.0,
-        "engels_index": 8.065767023421747,
-        "rental_index": 17.465487823794014,
-        "usi": 25.531254847215763,
+        "engels_index": 8.07,
+        "rental_index": 17.47,
+        "usi": 25.53,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1116,9 +1116,9 @@
         "average_monthly_salary": 5976.6,
         "monthly_rent_1br": 907.0,
         "monthly_food": 468.0,
-        "engels_index": 7.830539102499749,
-        "rental_index": 15.17585249138306,
-        "usi": 23.006391593882807,
+        "engels_index": 7.83,
+        "rental_index": 15.18,
+        "usi": 23.01,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1138,9 +1138,9 @@
         "average_monthly_salary": 14301.0,
         "monthly_rent_1br": 2632.0,
         "monthly_food": 650.0,
-        "engels_index": 4.545136703727012,
-        "rental_index": 18.404307391091532,
-        "usi": 22.949444094818546,
+        "engels_index": 4.55,
+        "rental_index": 18.4,
+        "usi": 22.95,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
@@ -1157,12 +1157,12 @@
       "properties": {
         "city": "San Jose",
         "country": "USA",
-        "average_monthly_salary": 15577.800000000001,
+        "average_monthly_salary": 15577.8,
         "monthly_rent_1br": 2256.0,
         "monthly_food": 598.0,
-        "engels_index": 3.838796235668708,
-        "rental_index": 14.48214767168663,
-        "usi": 18.32094390735534,
+        "engels_index": 3.84,
+        "rental_index": 14.48,
+        "usi": 18.32,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
       }
