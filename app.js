@@ -27,9 +27,8 @@ const hardBounds = [
 map.setMaxBounds(hardBounds);
 map.options.maxBoundsViscosity = 1.0;
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
-  noWrap: true,
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
