@@ -76,19 +76,15 @@ body {
    Map container
    ================================================= */
 #map {
-  position: fixed;
+  position: relative;
   top: 52px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 80%;
+  height: calc(90vh - 52px);
 }
 
 /* =================================================
    Legend
    ================================================= */
-#map {
-  position: relative;
-}
 
 .legend {
   position: absolute;
