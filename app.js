@@ -12,12 +12,21 @@
 // 1) Create the base map
 // ===============================
 const map = L.map("map", {
-  worldCopyJump: true,
+  worldCopyJump: false,
   zoomControl: true
 }).setView([20, 0], 2);
 
+// Hard bounds: prevents panning into repeated worlds
+const bounds = [
+  [-85, -180],
+  [85, 180]
+];
+map.setMaxBounds(bounds);
+map.options.maxBoundsViscosity = 1.0;
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
+  noWrap: true,
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
