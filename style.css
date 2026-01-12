@@ -88,8 +88,8 @@ body {
 
 .legend {
   position: absolute;
-  left: 12px;
-  bottom: 12px;
+  right: 16px;
+  bottom: 16px;
 
   width: 220px;
   padding: 10px 12px;
@@ -99,7 +99,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 24px rgba(0,0,0,0.10);
 
-  z-index: 10;
+  z-index: 500;
 }
 
 .legend-title {
