@@ -2574,6 +2574,446 @@
         "rating": "Comfortable",
         "as_of_date": "2026 Q1"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6456,
+          35.8614
+        ]
+      },
+      "properties": {
+        "city": "Saitama",
+        "country": "Japan",
+        "average_monthly_salary": 353000.0,
+        "monthly_rent_1br": 71000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.81,
+        "rental_index": 20.11,
+        "usi": 27.92,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7,
+          35.5167
+        ]
+      },
+      "properties": {
+        "city": "Kawasaki",
+        "country": "Japan",
+        "average_monthly_salary": 388700.0,
+        "monthly_rent_1br": 77000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.09,
+        "rental_index": 19.81,
+        "usi": 26.9,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.6381,
+          35.4442
+        ]
+      },
+      "properties": {
+        "city": "Yokohama",
+        "country": "Japan",
+        "average_monthly_salary": 388700.0,
+        "monthly_rent_1br": 76000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.09,
+        "rental_index": 19.55,
+        "usi": 26.64,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1233,
+          35.6047
+        ]
+      },
+      "properties": {
+        "city": "Chiba",
+        "country": "Japan",
+        "average_monthly_salary": 349200.0,
+        "monthly_rent_1br": 64000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.89,
+        "rental_index": 18.33,
+        "usi": 26.22,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.1956,
+          34.69
+        ]
+      },
+      "properties": {
+        "city": "Kobe",
+        "country": "Japan",
+        "average_monthly_salary": 349100.0,
+        "monthly_rent_1br": 63000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.89,
+        "rental_index": 18.05,
+        "usi": 25.94,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.8694,
+          38.2682
+        ]
+      },
+      "properties": {
+        "city": "Sendai",
+        "country": "Japan",
+        "average_monthly_salary": 325100.0,
+        "monthly_rent_1br": 56000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.48,
+        "rental_index": 17.23,
+        "usi": 25.7,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3831,
+          34.9769
+        ]
+      },
+      "properties": {
+        "city": "Shizuoka",
+        "country": "Japan",
+        "average_monthly_salary": 339200.0,
+        "monthly_rent_1br": 57000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.12,
+        "rental_index": 16.8,
+        "usi": 24.93,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7683,
+          35.0117
+        ]
+      },
+      "properties": {
+        "city": "Kyoto",
+        "country": "Japan",
+        "average_monthly_salary": 354400.0,
+        "monthly_rent_1br": 60000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.78,
+        "rental_index": 16.93,
+        "usi": 24.71,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5022,
+          34.6939
+        ]
+      },
+      "properties": {
+        "city": "Osaka",
+        "country": "Japan",
+        "average_monthly_salary": 376900.0,
+        "monthly_rent_1br": 64000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.31,
+        "rental_index": 16.98,
+        "usi": 24.29,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.0619,
+          37.9122
+        ]
+      },
+      "properties": {
+        "city": "Niigata",
+        "country": "Japan",
+        "average_monthly_salary": 313000.0,
+        "monthly_rent_1br": 48000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.81,
+        "rental_index": 15.34,
+        "usi": 24.14,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.4017,
+          33.59
+        ]
+      },
+      "properties": {
+        "city": "Fukuoka",
+        "country": "Japan",
+        "average_monthly_salary": 338300.0,
+        "monthly_rent_1br": 54000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.15,
+        "rental_index": 15.96,
+        "usi": 24.11,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4519,
+          34.3914
+        ]
+      },
+      "properties": {
+        "city": "Hiroshima",
+        "country": "Japan",
+        "average_monthly_salary": 344400.0,
+        "monthly_rent_1br": 55000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.0,
+        "rental_index": 15.97,
+        "usi": 23.97,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9,
+          35.1833
+        ]
+      },
+      "properties": {
+        "city": "Nagoya",
+        "country": "Japan",
+        "average_monthly_salary": 368200.0,
+        "monthly_rent_1br": 58000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.49,
+        "rental_index": 15.75,
+        "usi": 23.24,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.3544,
+          43.0619
+        ]
+      },
+      "properties": {
+        "city": "Sapporo",
+        "country": "Japan",
+        "average_monthly_salary": 310300.0,
+        "monthly_rent_1br": 43000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.88,
+        "rental_index": 13.86,
+        "usi": 22.74,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.935,
+          34.6617
+        ]
+      },
+      "properties": {
+        "city": "Okayama",
+        "country": "Japan",
+        "average_monthly_salary": 325400.0,
+        "monthly_rent_1br": 46000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.47,
+        "rental_index": 14.14,
+        "usi": 22.61,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7633,
+          32.7858
+        ]
+      },
+      "properties": {
+        "city": "Kumamoto",
+        "country": "Japan",
+        "average_monthly_salary": 307000.0,
+        "monthly_rent_1br": 41000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.98,
+        "rental_index": 13.36,
+        "usi": 22.33,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4831,
+          34.5728
+        ]
+      },
+      "properties": {
+        "city": "Sakai",
+        "country": "Japan",
+        "average_monthly_salary": 376900.0,
+        "monthly_rent_1br": 55000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.31,
+        "rental_index": 14.59,
+        "usi": 21.91,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.8833,
+          33.8833
+        ]
+      },
+      "properties": {
+        "city": "Kitakyushu",
+        "country": "Japan",
+        "average_monthly_salary": 338300.0,
+        "monthly_rent_1br": 45000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.15,
+        "rental_index": 13.3,
+        "usi": 21.45,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3636,
+          35.5633
+        ]
+      },
+      "properties": {
+        "city": "Sagamihara",
+        "country": "Japan",
+        "average_monthly_salary": 388700.0,
+        "monthly_rent_1br": 53000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 7.09,
+        "rental_index": 13.64,
+        "usi": 20.73,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.7261,
+          34.7108
+        ]
+      },
+      "properties": {
+        "city": "Hamamatsu",
+        "country": "Japan",
+        "average_monthly_salary": 339200.0,
+        "monthly_rent_1br": 41000.0,
+        "monthly_food": 27560.0,
+        "engels_index": 8.12,
+        "rental_index": 12.09,
+        "usi": 20.21,
+        "rating": "Comfortable",
+        "as_of_date": "2025 Q3"
+      }
     }
   ]
 }
