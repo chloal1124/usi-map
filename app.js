@@ -279,3 +279,92 @@ fetch(GEOJSON_FILE)
       `Expected: ${GEOJSON_FILE}`
     );
   });
+
+// calculator.js
+
+let pieChart = null;
+
+// 1. 讀取 URL parameter (e.g. ?city=Hiroshima)
+const urlParams = new URLSearchParams(window.location.search);
+const selectedCity = urlParams.get('city');
+
+// 2. Fetch GeoJSON to get city data (同 app.js 一樣)
+fetch('usi_cities_2025Q4v1.geojson')
+  .then(res => res.json())
+  .then(geojson => {
+    const cityData = geojson.features.find(f => 
+      f.properties.city?.toLowerCase() === selectedCity?.toLowerCase()
+    );
+
+    if (cityData) {
+      const p = cityData.properties;
+      const income = p.average_monthly_salary || p.typicalIncome || 0;
+      const housingPct = p.housing || 0; // 假設 % 或 absolute
+      const foodPct = p.food || 0;
+
+      // Auto-fill
+      document.getElementById('income').value = Math.round(income);
+      document.getElementById('housing').value = Math.round(income * (housingPct / 100));
+      document.getElementById('food').value = Math.round(income * (foodPct / 100));
+
+      document.getElementById('result-title').textContent = `Disposable Income for ${p.city || 'Selected City'}`;
+    }
+  })
+  .catch(err => console.error('Failed to load city defaults:', err));
+
+// 3. Calculate button
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const housing = parseFloat(document.getElementById('housing').value) || 0;
+  const food = parseFloat(document.getElementById('food').value) || 0;
+  const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+  const publicTransport = parseFloat(document.getElementById('public-transport').value) || 0;
+  const car = parseFloat(document.getElementById('car').value) || 0;
+  const clothing = parseFloat(document.getElementById('clothing').value) || 0;
+  const discretionary = parseFloat(document.getElementById('discretionary').value) || 0;
+
+  const totalExpenses = housing + food + utilities + publicTransport + car + clothing + discretionary;
+  const remaining = income - totalExpenses;
+
+  const resultText = `
+    Total Expenses: $${totalExpenses.toFixed(2)}<br>
+    <span style="color: ${remaining >= 0 ? '#27ae60' : '#e74c3c'}; font-size: 1.6em;">
+      Remaining (Disposable Income): $${remaining.toFixed(2)}
+    </span><br>
+    ${remaining < 0 ? '<span style="color:red">Not enough — consider adjustments or higher income.</span>' : ''}
+  `;
+
+  document.getElementById('remaining-text').innerHTML = resultText;
+  document.getElementById('result').style.display = 'block';
+
+  // Pie Chart
+  const ctx = document.getElementById('pieChart').getContext('2d');
+  const data = {
+    labels: ['Housing', 'Food', 'Utilities', 'Public Transport', 'Car', 'Clothing', 'Discretionary', 'Remaining'],
+    datasets: [{
+      data: [housing, food, utilities, publicTransport, car, clothing, discretionary, Math.max(remaining, 0)],
+      backgroundColor: [
+        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#E7E9ED', remaining >= 0 ? '#4CAF50' : '#999'
+      ]
+    }]
+  };
+
+  if (pieChart) pieChart.destroy();
+  pieChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+});
+
+// 4. PDF Export
+document.getElementById('export-pdf').addEventListener('click', () => {
+  const element = document.getElementById('result');
+  html2pdf().from(element).set({
+    margin: 1,
+    filename: 'USI_Calculator_Results.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  }).save();
+});
