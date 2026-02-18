@@ -102,7 +102,6 @@ function updatePie(dataObj) {
   const labels = Object.keys(dataObj);
   const values = Object.values(dataObj).map(v => round2(v));
 
-  // If everything is zero, don't draw weird chart
   const sum = values.reduce((a, b) => a + b, 0);
   if (sum <= 0) {
     if (pieChart) pieChart.destroy();
@@ -115,13 +114,14 @@ function updatePie(dataObj) {
   pieChart = new Chart(canvas, {
     type: "pie",
     data: {
-      labels,
+      labels: labels,
       datasets: [{
-          data: values,
-          backgroundColor: labels.map(label =>
+        data: values,
+        backgroundColor: labels.map(label =>
           label === "Remaining"
-          ? "#2ecc71"      // green
-          : "#bbbbbb"      // grey
+            ? "#2ecc71"
+            : "#bbbbbb"
+        )
       }]
     },
     options: {
