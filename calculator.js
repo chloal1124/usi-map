@@ -145,22 +145,37 @@ function updatePie(dataObj) {
 // ----------------------------------
 // PDF Export (html2pdf)
 // ----------------------------------
+// ----------------------------------
+// PDF Export (html2pdf)
+// ----------------------------------
 function exportPDF() {
+
   if (typeof html2pdf === "undefined") {
     alert("html2pdf not loaded. Check the script include in calculator.html");
     return;
   }
 
-  // Export ONLY report section if it exists; otherwise fallback to body
-  const target = document.getElementById("report-section") || document.body;
+  const target = document.querySelector(".calc-container");
+
+  if (!target) {
+    alert("Calculator container not found.");
+    return;
+  }
 
   html2pdf()
     .from(target)
     .set({
       margin: 10,
       filename: "USI_Calculation.pdf",
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+      html2canvas: {
+        scale: 2,
+        useCORS: true
+      },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait"
+      }
     })
     .save();
 }
