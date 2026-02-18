@@ -1,9 +1,10 @@
 // =====================================================
-// app.js — V1.2 (Leaflet + GeoJSON + USI)
+// app.js — V2.0(Leaflet + GeoJSON + USI)
 // - Popup EXACT format you want (no rounding, no toFixed)
 // - Circle radius: min 8, max 18 (smooth linear)
 // - Adds "interaction guard": raise z-index + pointer-events,
 //   and force-enable leaflet interactions.
+// - Added link to calculator.html with city parameter in popup
 // =====================================================
 
 const GEOJSON_FILE = "usi_cities_2025Q4v1.geojson";
@@ -95,109 +96,78 @@ function usiRating(u) {
 }
 
 function getColor(u) {
-  if (u === null) return "#888888";
-  if (u < 30) return "#2ecc71";
-  if (u < 35) return "#f1c40f";
-  if (u < 40) return "#e67e22";
-  if (u < 45) return "#e74c3c";
-  if (u < 55) return "#6c3483";
-  return "#3b1f4a";
+  if (u === null) return "#999";
+  if (u < 30) return "#2ecc71"; // green
+  if (u < 35) return "#f1c40f"; // yellow
+  if (u < 40) return "#e67e22"; // orange
+  if (u < 45) return "#e74c3c"; // red
+  if (u < 55) return "#6c3483"; // purple
+  return "#3b1f4a"; // dark purple
 }
 
-// Radius: min 8, max 18 (linear + clamp)
 function getRadius(u) {
-  const MIN_R = 8;
-  const MAX_R = 18;
-  if (u === null) return MIN_R;
-
-  const x = Math.max(25, Math.min(60, u));
-  return MIN_R + (x - 25) * (MAX_R - MIN_R) / (60 - 25);
+  if (u === null) return 10;
+  const minR = 8, maxR = 18;
+  const minU = 0, maxU = 100; // adjust if USI max is different
+  return minR + (maxR - minR) * ((u - minU) / (maxU - minU));
 }
 
-function pickFirstKey(props, candidates) {
-  if (!props) return null;
+const KEY_CANDIDATES = {
+  usi: ["usi", "USI", "urban_stress_index"],
+  city: ["city", "name", "place"],
+  country: ["country", "nation"],
+  housingPct: ["housing", "housing_pct", "rental_index"],
+  foodPct: ["food", "food_pct", "engels_index"],
+  rentMonthly: ["monthly_rent_1br", "rent_monthly"],
+  foodMonthly: ["monthly_food", "food_monthly"],
+  incomeMonthly: ["average_monthly_salary", "typicalIncome", "income_monthly"]
+};
+
+function pickFirstKey(obj, candidates) {
   for (const k of candidates) {
-    if (Object.prototype.hasOwnProperty.call(props, k) && props[k] !== null && props[k] !== "") {
-      return k;
-    }
+    if (obj[k] !== undefined) return k;
   }
   return null;
 }
 
 // -------------------------------
-// 3) Key detection (robust)
+// 4) Build popup content
 // -------------------------------
-const KEY_CANDIDATES = {
-  usi: ["usi", "USI", "index", "score", "urban_stress_index", "urbanStressIndex"],
-  city: ["city", "City", "name", "NAME", "city_name", "CityName"],
-  country: ["country", "Country", "cntry", "COUNTRY", "iso2", "ISO2", "iso3", "ISO3"],
+function buildPopup(p, keys) {
+  const usi = keys.usiKey ? toNumber(p[keys.usiKey]) : null;
+  const city = p[keys.cityKey] || "Unknown";
+  const country = p[keys.countryKey] ? `, ${p[keys.countryKey]}` : "";
+  const housing = keys.housingPctKey ? toNumber(p[keys.housingPctKey]) : null;
+  const food = keys.foodPctKey ? toNumber(p[keys.foodPctKey]) : null;
+  const income = keys.incomeMonthlyKey ? toNumber(p[keys.incomeMonthlyKey]) : null;
 
-  // your v1 fields (already in %)
-  housingPct: ["rental_index", "housing_pct", "rent_pct", "rent_share", "rentShare"],
-  foodPct: ["engels_index", "food_pct", "food_share", "foodShare"],
-
-  // raw monthly costs (fallback)
-  rentMonthly: ["monthly_rent_1br", "rent_monthly", "monthly_rent"],
-  foodMonthly: ["monthly_food", "food_monthly", "monthly_food_cost"],
-
-  // income (monthly, local currency)
-  incomeMonthly: ["average_monthly_salary", "monthly_income", "income_monthly", "income"]
-};
-
-// -------------------------------
-// 4) Popup (exact format)
-// -------------------------------
-function buildPopup(props, keys) {
-  const city = (keys.cityKey ? props[keys.cityKey] : null) || "Unknown city";
-  const country = (keys.countryKey ? props[keys.countryKey] : null) || "";
-  const title = country ? `${city}, ${country}` : city;
-
-  const usiRaw = keys.usiKey ? props[keys.usiKey] : null;
-  const usiNum = keys.usiKey ? toNumber(props[keys.usiKey]) : null;
-  const rating = usiRating(usiNum);
-
-  let housingDisplay = "N/A";
-  let foodDisplay = "N/A";
-
-  const housingRaw = keys.housingPctKey ? props[keys.housingPctKey] : null;
-  const foodRaw = keys.foodPctKey ? props[keys.foodPctKey] : null;
-
-  if (housingRaw !== null && housingRaw !== undefined && housingRaw !== "") housingDisplay = keepDecimals(housingRaw);
-  if (foodRaw !== null && foodRaw !== undefined && foodRaw !== "") foodDisplay = keepDecimals(foodRaw);
-
-  const income = keys.incomeMonthlyKey ? toNumber(props[keys.incomeMonthlyKey]) : null;
-
-  // fallback compute if needed (no rounding)
-  if (housingDisplay === "N/A" && income !== null && income > 0 && keys.rentMonthlyKey) {
-    const rent = toNumber(props[keys.rentMonthlyKey]);
-    if (rent !== null) housingDisplay = keepDecimals((rent / income) * 100);
-  }
-  if (foodDisplay === "N/A" && income !== null && income > 0 && keys.foodMonthlyKey) {
-    const food = toNumber(props[keys.foodMonthlyKey]);
-    if (food !== null) foodDisplay = keepDecimals((food / income) * 100);
-  }
+  const housingDisplay = keepDecimals(housing);
+  const foodDisplay = keepDecimals(food);
+  const rating = usiRating(usi);
+  const usiDisplay = keepDecimals(usi);
 
   return `
-    <div style="min-width:220px; line-height:1.35">
-      <div style="font-weight:700; font-size:14px; margin-bottom:8px;">
-        ${title}
+    <div style="min-width: 180px; font-family: system-ui; font-size: 13px; line-height: 1.4;">
+      <b>${city}${country}</b>
+      <div style="margin-top: 8px;">
+        USI: ${usiDisplay} (${rating})
       </div>
 
-      <div>
-        <b>USI:</b> ${keepDecimals(usiRaw)} (${rating})
-      </div>
-
-      <div style="margin-top:10px;">
+      <div style="margin-top: 8px;">
         <b>Housing:</b> ${housingDisplay}
       </div>
 
-      <div style="margin-top:10px;">
+      <div>
         <b>Food:</b> ${foodDisplay}
       </div>
 
       <div style="margin-top:12px;">
         <b>Typical Income</b><br>
         <span style="opacity:0.65;">(local currency, monthly)</span> ${fmtIncome(income)}
+      </div>
+
+      <div style="margin-top:12px;">
+        <a href="calculator.html?city=${encodeURIComponent(city)}" target="_blank">How much would I left? →</a>
       </div>
     </div>
   `;
