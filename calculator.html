@@ -9,31 +9,60 @@
 
 <body>
 
-  <!-- ===== TOPBAR (SAME ON ALL PAGES) ===== -->
-  <header class="topbar">
-    <div class="brand">
-      <div class="title">Urban Stress Index</div>
-      <div class="subtitle">
-        An indicator of housing and food cost burden across cities
-      </div>
+<header class="topbar">
+  ...
+</header>
+
+<main class="page">
+
+  <h1>Cost of Living & Disposable Income Calculator</h1>
+  <p>Enter your monthly income and see how much you have left.</p>
+
+  <form id="calc-form" class="calc-table">
+
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Monthly Amount</th>
+      </tr>
+
+      <!-- rows here -->
+
+      <tr style="background:#f3f6f9; font-weight:bold;">
+        <td>Remaining</td>
+        <td id="remaining-cell">–</td>
+      </tr>
+
+    </table>
+
+    <div class="button-wrapper">
+      <button type="button" id="calc-btn">Calculate</button>
     </div>
 
-    <nav class="nav">
-      <a class="nav-btn" href="index.html">Map</a>
-      <a class="nav-btn" href="calculator.html">Calculator</a>
-      <a class="nav-btn" href="methodology.html">Methodology</a>
-      <a class="nav-btn" href="sources.html">Sources</a>
-      <a class="nav-btn" href="disclaimer.html">Disclaimer</a>
-    </nav>
-  </header>
+  </form>
 
-  <!-- ===== PAGE CONTENT ===== -->
-  <main class="page">
-    <!-- page-specific content here -->
-  </main>
+  <!-- ===== RESULT SECTION ===== -->
+  <div id="report-section">
+
+    <h3 id="result-title"></h3>
+
+    <canvas id="pieChart" style="max-width:100%; margin-top:20px;"></canvas>
+
+    <div class="button-wrapper" style="margin-top:20px;">
+      <button id="export-pdf">Export as PDF</button>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="calculator.js"></script>
 
 </body>
 </html>
+
 
 
 <main class="page">

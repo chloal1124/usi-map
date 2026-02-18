@@ -117,7 +117,11 @@ function updatePie(dataObj) {
     data: {
       labels,
       datasets: [{
-        data: values
+          data: values,
+          backgroundColor: labels.map(label =>
+          label === "Remaining"
+          ? "#2ecc71"      // green
+          : "#bbbbbb"      // grey
       }]
     },
     options: {
