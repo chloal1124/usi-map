@@ -103,7 +103,10 @@ function updatePie(dataObj) {
   const labels = Object.keys(dataObj);
   const values = Object.values(dataObj);
 
-  const sum = values.reduce((a, b) => a + b, 0);
+  const sum = values.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+
   if (sum <= 0) {
     if (pieChart) pieChart.destroy();
     pieChart = null;
@@ -119,21 +122,26 @@ function updatePie(dataObj) {
       datasets: [{
         data: values,
         backgroundColor: labels.map(function(label) {
-          return label === "Remaining"
-            ? "#2ecc71"
-            : "#bbbbbb";
+          if (label === "Remaining") {
+            return "#2ecc71";
+          } else {
+            return "#bbbbbb";
+          }
         })
       }]
     },
     options: {
       responsive: true,
       plugins: {
-        legend: { position: "bottom" }
+        legend: {
+          position: "bottom"
+        }
       }
     }
   });
 
 }
+
 // ----------------------------------
 // PDF Export (html2pdf)
 // ----------------------------------
