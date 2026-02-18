@@ -165,11 +165,16 @@ function buildPopup(p, keys) {
         <b>Typical Income</b><br>
         <span style="opacity:0.65;">(local currency, monthly)</span> ${fmtIncome(income)}
       </div>
-
       <div style="margin-top:12px;">
-        <a href="calculator.html?city=${encodeURIComponent(city)}" target="_blank">How much would I left? →</a>
-      </div>
-    </div>
+  	<a href="calculator.html?
+		income=${income || 0}
+		&housingPct=${housing || 0}
+		&foodPct=${food || 0}"
+ 		 target="_blank">
+    		How much would I left? →
+ 	 </a>
+	</div>
+    
   `;
 }
 
@@ -249,4 +254,5 @@ fetch(GEOJSON_FILE)
       `Expected: ${GEOJSON_FILE}`
     );
   });
+
 

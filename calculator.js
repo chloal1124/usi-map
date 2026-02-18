@@ -1,4 +1,25 @@
+function loadFromURL() {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const income = parseFloat(params.get("income")) || 0;
+  const housingPct = parseFloat(params.get("housingPct")) || 0;
+  const foodPct = parseFloat(params.get("foodPct")) || 0;
+
+  if (!income) return;
+
+  document.getElementById("income").value = income;
+  document.getElementById("housing").value = income * housingPct / 100;
+  document.getElementById("food").value = income * foodPct / 100;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  loadFromURL();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  console.log("Calculator JS running");
 
   const calcBtn = document.getElementById("calc-btn");
   if (calcBtn) {
@@ -43,17 +64,9 @@ function calculate() {
 
 function getVal(id) {
   const el = document.getElementById(id);
-  if (!el) return 0;
-  return parseFloat(el.value) || 0;
+  return el ? parseFloat(el.value) || 0 : 0;
 }
 
 function exportPDF() {
-
-  const element = document.getElementById("report-section");
-
-  html2pdf().from(element).set({
-    margin: 1,
-    filename: "USI_Calculation.pdf"
-  }).save();
-
+  html2pdf().from(document.body).save("USI_Calculation.pdf");
 }
