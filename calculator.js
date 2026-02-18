@@ -1,5 +1,32 @@
-function loadFromURL() {
+// ===============================
+// USI Calculator – Pie + PDF Final
+// ===============================
 
+let pieChart = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadFromURL();
+  wireEvents();
+  calculate(); // run once to populate remaining + chart
+});
+
+function wireEvents() {
+  const calcBtn = document.getElementById("calc-btn");
+  if (calcBtn) calcBtn.addEventListener("click", calculate);
+
+  const pdfBtn = document.getElementById("export-pdf");
+  if (pdfBtn) pdfBtn.addEventListener("click", exportPDF);
+
+  // Auto-recalc whenever user edits any number field
+  document.querySelectorAll("input[type='number']").forEach((el) => {
+    el.addEventListener("input", calculate);
+  });
+}
+
+// ----------------------------------
+// Load from URL (income + % values)
+// ----------------------------------
+function loadFromURL() {
   const params = new URLSearchParams(window.location.search);
 
   const income = parseFloat(params.get("income")) || 0;
@@ -8,41 +35,23 @@ function loadFromURL() {
 
   if (!income) return;
 
-  document.getElementById("income").value = income;
-  document.getElementById("housing").value = income * housingPct / 100;
-  document.getElementById("food").value = income * foodPct / 100;
+  setNum("income", income, 2);
+  setNum("housing", income * housingPct / 100, 2);
+  setNum("food", income * foodPct / 100, 2);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  loadFromURL();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  console.log("Calculator JS running");
-
-  const calcBtn = document.getElementById("calc-btn");
-  if (calcBtn) {
-    calcBtn.addEventListener("click", calculate);
-  }
-
-  const pdfBtn = document.getElementById("export-pdf");
-  if (pdfBtn) {
-    pdfBtn.addEventListener("click", exportPDF);
-  }
-
-});
-
+// ----------------------------------
+// Main Calculation
+// ----------------------------------
 function calculate() {
-
-  const income = getVal("income");
-  const housing = getVal("housing");
-  const food = getVal("food");
-  const utilities = getVal("utilities");
-  const transport = getVal("public-transport");
-  const car = getVal("car");
-  const clothing = getVal("clothing");
-  const discretionary = getVal("discretionary");
+  const income = getNum("income");
+  const housing = getNum("housing");
+  const food = getNum("food");
+  const utilities = getNum("utilities");
+  const transport = getNum("public-transport");
+  const car = getNum("car");
+  const clothing = getNum("clothing");
+  const discretionary = getNum("discretionary");
 
   const total =
     housing +
@@ -55,18 +64,119 @@ function calculate() {
 
   const remaining = income - total;
 
-  const cell = document.getElementById("remaining-cell");
-  if (cell) {
-    cell.innerHTML = remaining.toFixed(2);
+  // Update Remaining row
+  const remainingCell = document.getElementById("remaining-cell");
+  if (remainingCell) {
+    const color = remaining >= 0 ? "#2ecc71" : "#e74c3c";
+    remainingCell.innerHTML = `
+      <span style="color:${color}; font-weight:600;">
+        ${fmt2(remaining)}
+      </span>
+    `;
   }
 
+  // Update pie chart (remaining shown as 0 if negative)
+  updatePie({
+    Housing: housing,
+    Food: food,
+    Utilities: utilities,
+    "Public Transport": transport,
+    "Car Expenses": car,
+    Clothing: clothing,
+    Discretionary: discretionary,
+    Remaining: Math.max(remaining, 0)
+  });
+
+  // Optional: if you want a text summary somewhere
+  const title = document.getElementById("result-title");
+  if (title) title.textContent = "Breakdown & Remaining";
 }
 
-function getVal(id) {
-  const el = document.getElementById(id);
-  return el ? parseFloat(el.value) || 0 : 0;
+// ----------------------------------
+// Pie chart (Chart.js)
+// ----------------------------------
+function updatePie(dataObj) {
+  const canvas = document.getElementById("pieChart");
+  if (!canvas || typeof Chart === "undefined") return;
+
+  const labels = Object.keys(dataObj);
+  const values = Object.values(dataObj).map(v => round2(v));
+
+  // If everything is zero, don't draw weird chart
+  const sum = values.reduce((a, b) => a + b, 0);
+  if (sum <= 0) {
+    if (pieChart) pieChart.destroy();
+    pieChart = null;
+    return;
+  }
+
+  if (pieChart) pieChart.destroy();
+
+  pieChart = new Chart(canvas, {
+    type: "pie",
+    data: {
+      labels,
+      datasets: [{
+        data: values
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: "bottom" }
+      }
+    }
+  });
 }
 
+// ----------------------------------
+// PDF Export (html2pdf)
+// ----------------------------------
 function exportPDF() {
-  html2pdf().from(document.body).save("USI_Calculation.pdf");
+  if (typeof html2pdf === "undefined") {
+    alert("html2pdf not loaded. Check the script include in calculator.html");
+    return;
+  }
+
+  // Export ONLY report section if it exists; otherwise fallback to body
+  const target = document.getElementById("report-section") || document.body;
+
+  html2pdf()
+    .from(target)
+    .set({
+      margin: 10,
+      filename: "USI_Calculation.pdf",
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+    })
+    .save();
+}
+
+// ----------------------------------
+// Helpers
+// ----------------------------------
+function getNum(id) {
+  const el = document.getElementById(id);
+  return el ? (parseFloat(el.value) || 0) : 0;
+}
+
+function setNum(id, value, dp = 2) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.value = roundTo(value, dp);
+}
+
+function roundTo(n, dp) {
+  return (Number(n) || 0).toFixed(dp);
+}
+
+function round2(n) {
+  return Math.round((Number(n) || 0) * 100) / 100;
+}
+
+function fmt2(n) {
+  return (Number(n) || 0).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 }

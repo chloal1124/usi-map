@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PAGE TITLE – Urban Stress Index</title>
+  <title>Cost of Living Calculator – Urban Stress Index</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -112,14 +112,18 @@
 
     <canvas id="pieChart" style="max-width:100%; margin-top:20px;"></canvas>
 
-    <div class="button-wrapper">
-      <button id="export-pdf">
-        Export as PDF
-      </button>
+    <div id="report-section">
+  	<h3 id="result-title"></h3>
+   	<canvas id="pieChart"></canvas>
+
+  	<button id="export-pdf">Export as PDF</button>
     </div>
+
 
   </div>
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="calculator.js"></script>
