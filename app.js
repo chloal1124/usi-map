@@ -1,17 +1,28 @@
 // =====================================================
-// Urban Stress Index Map — Clean Stable Version
+// app.js — GitHub Pages Project-safe (repo site)
+// Works for: https://<user>.github.io/<repo>/
 // =====================================================
 
 const GEOJSON_FILE = "usi_cities_2025Q4v1.geojson";
 
+// ---- base path for GitHub Pages project site ----
+// If URL is /usi-map/ or /usi-map/index.html => base becomes /usi-map/
+function getBasePath() {
+  const p = window.location.pathname;
+  return p.endsWith("/") ? p : p.replace(/[^/]*$/, "");
+}
+const BASE = getBasePath(); // e.g. "/usi-map/"
+
+// Build URLs safely under BASE
+function urlUnderBase(relativePath) {
+  // relativePath like "cities/calgary.html" or "calculator.html?...".
+  return new URL(relativePath, window.location.origin + BASE).toString();
+}
+
 // -----------------------------------------------------
 // 1) Map Setup
 // -----------------------------------------------------
-
-const map = L.map("map", {
-  zoomControl: true,
-  worldCopyJump: false
-}).setView([20, 0], 2);
+const map = L.map("map", { zoomControl: true, worldCopyJump: false }).setView([20, 0], 2);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -20,9 +31,8 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // -----------------------------------------------------
-// 2) Utility Helpers
+// 2) Helpers
 // -----------------------------------------------------
-
 function toNumber(x) {
   const n = Number(x);
   return Number.isFinite(n) ? n : null;
@@ -35,9 +45,11 @@ function keepDecimals(x) {
 
 function fmtIncome(n) {
   if (n === null) return "N/A";
-  return n.toLocaleString(undefined, {
-    maximumFractionDigits: 0
-  });
+  try {
+    return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  } catch {
+    return String(Math.round(n));
+  }
 }
 
 function slugify(str) {
@@ -51,7 +63,6 @@ function slugify(str) {
 // -----------------------------------------------------
 // 3) USI Classification
 // -----------------------------------------------------
-
 function usiRating(u) {
   if (u === null) return "Unknown";
   if (u < 30) return "Comfortable";
@@ -81,37 +92,28 @@ function getRadius(u) {
 // -----------------------------------------------------
 // 4) Property Key Detection
 // -----------------------------------------------------
-
 const KEY_CANDIDATES = {
   usi: ["usi", "USI", "urban_stress_index"],
-  city: ["city", "name"],
-  country: ["country"],
+  city: ["city", "name", "place"],
+  country: ["country", "nation"],
 
-  housingPct: [
-    "housing",
-    "housing_pct",
-    "housing_burden",
-    "housing_share"
-  ],
+  // IMPORTANT: add common names used by your generator
+  housingPct: ["housing", "housing_pct", "housing_burden", "housing_share"],
+  foodPct: ["food", "food_pct", "food_share", "engels_index"],
 
-  foodPct: [
-    "food",
-    "food_pct",
-    "food_share",
-    "engels_index"
-  ],
-
-  incomeMonthly: [
-    "average_monthly_salary",
-    "income_monthly",
-    "typical_income"
-  ]
+  incomeMonthly: ["average_monthly_salary", "income_monthly", "typical_income"]
 };
+
+function pickKey(obj, candidates) {
+  for (const k of candidates) {
+    if (obj && obj[k] !== undefined) return k;
+  }
+  return null;
+}
 
 // -----------------------------------------------------
 // 5) Popup Builder
 // -----------------------------------------------------
-
 function buildPopup(props, keys) {
   const usi = keys.usiKey ? toNumber(props[keys.usiKey]) : null;
   const city = keys.cityKey ? props[keys.cityKey] : "Unknown";
@@ -121,10 +123,12 @@ function buildPopup(props, keys) {
   const income = keys.incomeMonthlyKey ? toNumber(props[keys.incomeMonthlyKey]) : null;
 
   const citySlug = slugify(city);
-  const countrySlug = slugify(country);
 
-  // 🔥 Adjust this if your folder structure differs
-  const cityPath = `/cities/${countrySlug}/${citySlug}.html`;
+  // Your repo has /cities/ folder (flat). Use that.
+  const cityReportUrl = urlUnderBase(`cities/${citySlug}.html`);
+  const calcUrl = urlUnderBase(
+    `calculator.html?income=${income || 0}&housingPct=${housing || 0}&foodPct=${food || 0}`
+  );
 
   return `
     <div style="min-width:200px; font-family:system-ui; font-size:13px; line-height:1.4;">
@@ -149,13 +153,13 @@ function buildPopup(props, keys) {
       </div>
 
       <div style="margin-top:12px;">
-        <a href="${cityPath}" target="_blank">
+        <a href="${cityReportUrl}" target="_blank" rel="noopener">
           See full city report →
         </a>
       </div>
 
       <div style="margin-top:8px;">
-        <a href="calculator.html?income=${income || 0}&housingPct=${housing || 0}&foodPct=${food || 0}" target="_blank">
+        <a href="${calcUrl}" target="_blank" rel="noopener">
           How much would I have left? →
         </a>
       </div>
@@ -166,15 +170,15 @@ function buildPopup(props, keys) {
 // -----------------------------------------------------
 // 6) Load GeoJSON + Render
 // -----------------------------------------------------
+const geojsonUrl = urlUnderBase(GEOJSON_FILE);
 
-fetch(GEOJSON_FILE)
-  .then(res => {
-    if (!res.ok) throw new Error("Failed to load GeoJSON");
+fetch(geojsonUrl)
+  .then((res) => {
+    if (!res.ok) throw new Error(`GeoJSON fetch failed: ${res.status} ${res.statusText}`);
     return res.json();
   })
-  .then(geojson => {
-
-    const firstProps = geojson.features[0].properties;
+  .then((geojson) => {
+    const firstProps = geojson?.features?.[0]?.properties || {};
 
     const keys = {
       usiKey: pickKey(firstProps, KEY_CANDIDATES.usi),
@@ -187,32 +191,28 @@ fetch(GEOJSON_FILE)
 
     const layer = L.geoJSON(geojson, {
       pointToLayer: (feature, latlng) => {
-        const props = feature.properties;
-        const usi = keys.usiKey ? toNumber(props[keys.usiKey]) : null;
-        const color = getColor(usi);
+        const p = feature.properties || {};
+        const u = keys.usiKey ? toNumber(p[keys.usiKey]) : null;
+        const c = getColor(u);
 
         return L.circleMarker(latlng, {
-          radius: getRadius(usi),
-          color: color,
-          fillColor: color,
+          radius: getRadius(u),
+          color: c,
+          fillColor: c,
           fillOpacity: 0.8,
           weight: 1
         });
       },
       onEachFeature: (feature, marker) => {
-        marker.bindPopup(
-          buildPopup(feature.properties, keys),
-          { maxWidth: 340 }
-        );
+        marker.bindPopup(buildPopup(feature.properties || {}, keys), { maxWidth: 340 });
       }
     }).addTo(map);
 
-    const bounds = layer.getBounds();
-    if (bounds.isValid()) {
-      map.fitBounds(bounds, { padding: [20, 20] });
-    }
+    const b = layer.getBounds();
+    if (b.isValid()) map.fitBounds(b, { padding: [20, 20] });
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     alert("Failed to load city data.");
   });
+
