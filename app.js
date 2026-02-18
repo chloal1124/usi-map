@@ -1,28 +1,49 @@
 // =====================================================
-// app.js — GitHub Pages Project-safe (repo site)
-// Works for: https://<user>.github.io/<repo>/
+// app.js — Stable Version (Old Structure Retained)
+// Leaflet + GeoJSON + USI
 // =====================================================
 
 const GEOJSON_FILE = "usi_cities_2025Q4v1.geojson";
 
-// ---- base path for GitHub Pages project site ----
-// If URL is /usi-map/ or /usi-map/index.html => base becomes /usi-map/
-function getBasePath() {
-  const p = window.location.pathname;
-  return p.endsWith("/") ? p : p.replace(/[^/]*$/, "");
-}
-const BASE = getBasePath(); // e.g. "/usi-map/"
+// -------------------------------
+// 0) Interaction guard
+// -------------------------------
+function hardenMapInteractivity() {
+  const el = document.getElementById("map");
+  if (!el) return;
 
-// Build URLs safely under BASE
-function urlUnderBase(relativePath) {
-  // relativePath like "cities/calgary.html" or "calculator.html?...".
-  return new URL(relativePath, window.location.origin + BASE).toString();
+  el.style.position = el.style.position || "fixed";
+  el.style.zIndex = "900";
+  el.style.pointerEvents = "auto";
+
+  document.body.style.pointerEvents = "auto";
 }
 
-// -----------------------------------------------------
-// 1) Map Setup
-// -----------------------------------------------------
-const map = L.map("map", { zoomControl: true, worldCopyJump: false }).setView([20, 0], 2);
+hardenMapInteractivity();
+
+// -------------------------------
+// 1) Create map
+// -------------------------------
+const map = L.map("map", {
+  worldCopyJump: false,
+  zoomControl: true
+}).setView([20, 0], 2);
+
+map.dragging.enable();
+map.scrollWheelZoom.enable();
+map.doubleClickZoom.enable();
+map.boxZoom.enable();
+map.keyboard.enable();
+if (map.tap) map.tap.enable();
+map.touchZoom.enable();
+
+const hardBounds = [
+  [-85, -180],
+  [85, 180]
+];
+
+map.setMaxBounds(hardBounds);
+map.options.maxBoundsViscosity = 1.0;
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -30,26 +51,24 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
 }).addTo(map);
 
-// -----------------------------------------------------
+setTimeout(hardenMapInteractivity, 0);
+
+// -------------------------------
 // 2) Helpers
-// -----------------------------------------------------
+// -------------------------------
 function toNumber(x) {
   const n = Number(x);
   return Number.isFinite(n) ? n : null;
 }
 
 function keepDecimals(x) {
-  if (x === null || x === undefined || x === "") return "N/A";
+  if (x === undefined || x === null || x === "") return "N/A";
   return String(x);
 }
 
 function fmtIncome(n) {
   if (n === null) return "N/A";
-  try {
-    return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
-  } catch {
-    return String(Math.round(n));
-  }
+  return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 }
 
 function slugify(str) {
@@ -60,9 +79,6 @@ function slugify(str) {
     .replace(/[^\w\-]+/g, "");
 }
 
-// -----------------------------------------------------
-// 3) USI Classification
-// -----------------------------------------------------
 function usiRating(u) {
   if (u === null) return "Unknown";
   if (u < 30) return "Comfortable";
@@ -89,77 +105,79 @@ function getRadius(u) {
   return minR + (maxR - minR) * (u / 100);
 }
 
-// -----------------------------------------------------
-// 4) Property Key Detection
-// -----------------------------------------------------
+// -------------------------------
+// 3) Key Detection (Old Naming Retained)
+// -------------------------------
 const KEY_CANDIDATES = {
-  usi: ["usi", "USI", "urban_stress_index"],
-  city: ["city", "name", "place"],
-  country: ["country", "nation"],
+  usi: ["usi"],
+  city: ["city"],
+  country: ["country"],
 
-  // IMPORTANT: add common names used by your generator
-  housingPct: ["housing", "housing_pct", "housing_burden", "housing_share"],
-  foodPct: ["food", "food_pct", "food_share", "engels_index"],
+  // OLD NAMING — YOUR GEOJSON FORMAT
+  housingPct: ["rental_index"],
+  foodPct: ["engels_index"],
 
-  incomeMonthly: ["average_monthly_salary", "income_monthly", "typical_income"]
+  rentMonthly: ["monthly_rent_1br"],
+  foodMonthly: ["monthly_food"],
+  incomeMonthly: ["average_monthly_salary"]
 };
 
-function pickKey(obj, candidates) {
+function pickFirstKey(obj, candidates) {
   for (const k of candidates) {
-    if (obj && obj[k] !== undefined) return k;
+    if (obj[k] !== undefined) return k;
   }
   return null;
 }
 
-// -----------------------------------------------------
-// 5) Popup Builder
-// -----------------------------------------------------
-function buildPopup(props, keys) {
-  const usi = keys.usiKey ? toNumber(props[keys.usiKey]) : null;
-  const city = keys.cityKey ? props[keys.cityKey] : "Unknown";
-  const country = keys.countryKey ? props[keys.countryKey] : "";
-  const housing = keys.housingPctKey ? toNumber(props[keys.housingPctKey]) : null;
-  const food = keys.foodPctKey ? toNumber(props[keys.foodPctKey]) : null;
-  const income = keys.incomeMonthlyKey ? toNumber(props[keys.incomeMonthlyKey]) : null;
+// -------------------------------
+// 4) Popup Builder (Structure Preserved)
+// -------------------------------
+function buildPopup(p, keys) {
+  const usi = keys.usiKey ? toNumber(p[keys.usiKey]) : null;
+  const city = p[keys.cityKey] || "Unknown";
+  const country = p[keys.countryKey] ? `, ${p[keys.countryKey]}` : "";
+
+  const housing = keys.housingPctKey ? toNumber(p[keys.housingPctKey]) : null;
+  const food = keys.foodPctKey ? toNumber(p[keys.foodPctKey]) : null;
+  const income = keys.incomeMonthlyKey ? toNumber(p[keys.incomeMonthlyKey]) : null;
+
+  const housingDisplay = keepDecimals(housing);
+  const foodDisplay = keepDecimals(food);
+  const usiDisplay = keepDecimals(usi);
+  const rating = usiRating(usi);
 
   const citySlug = slugify(city);
 
-  // Your repo has /cities/ folder (flat). Use that.
-  const cityReportUrl = urlUnderBase(`cities/${citySlug}.html`);
-  const calcUrl = urlUnderBase(
-    `calculator.html?income=${income || 0}&housingPct=${housing || 0}&foodPct=${food || 0}`
-  );
-
   return `
-    <div style="min-width:200px; font-family:system-ui; font-size:13px; line-height:1.4;">
-      <b>${city}${country ? ", " + country : ""}</b>
+    <div style="min-width: 180px; font-family: system-ui; font-size: 13px; line-height: 1.4;">
+      <b>${city}${country}</b>
 
-      <div style="margin-top:8px;">
-        USI: ${keepDecimals(usi)} (${usiRating(usi)})
+      <div style="margin-top: 8px;">
+        USI: ${usiDisplay} (${rating})
       </div>
 
-      <div style="margin-top:8px;">
-        <b>Housing:</b> ${keepDecimals(housing)}
+      <div style="margin-top: 8px;">
+        <b>Housing:</b> ${housingDisplay}
       </div>
 
       <div>
-        <b>Food:</b> ${keepDecimals(food)}
+        <b>Food:</b> ${foodDisplay}
       </div>
 
       <div style="margin-top:12px;">
         <b>Typical Income</b><br>
-        <span style="opacity:0.6;">(monthly, local currency)</span><br>
+        <span style="opacity:0.65;">(local currency, monthly)</span>
         ${fmtIncome(income)}
       </div>
 
       <div style="margin-top:12px;">
-        <a href="${cityReportUrl}" target="_blank" rel="noopener">
+        <a href="cities/${citySlug}.html" target="_blank">
           See full city report →
         </a>
       </div>
 
       <div style="margin-top:8px;">
-        <a href="${calcUrl}" target="_blank" rel="noopener">
+        <a href="calculator.html?income=${income || 0}&housingPct=${housing || 0}&foodPct=${food || 0}" target="_blank">
           How much would I have left? →
         </a>
       </div>
@@ -167,26 +185,26 @@ function buildPopup(props, keys) {
   `;
 }
 
-// -----------------------------------------------------
-// 6) Load GeoJSON + Render
-// -----------------------------------------------------
-const geojsonUrl = urlUnderBase(GEOJSON_FILE);
-
-fetch(geojsonUrl)
+// -------------------------------
+// 5) Load + Render
+// -------------------------------
+fetch(GEOJSON_FILE)
   .then((res) => {
-    if (!res.ok) throw new Error(`GeoJSON fetch failed: ${res.status} ${res.statusText}`);
+    if (!res.ok) throw new Error(`Failed to load GeoJSON`);
     return res.json();
   })
   .then((geojson) => {
     const firstProps = geojson?.features?.[0]?.properties || {};
 
     const keys = {
-      usiKey: pickKey(firstProps, KEY_CANDIDATES.usi),
-      cityKey: pickKey(firstProps, KEY_CANDIDATES.city),
-      countryKey: pickKey(firstProps, KEY_CANDIDATES.country),
-      housingPctKey: pickKey(firstProps, KEY_CANDIDATES.housingPct),
-      foodPctKey: pickKey(firstProps, KEY_CANDIDATES.foodPct),
-      incomeMonthlyKey: pickKey(firstProps, KEY_CANDIDATES.incomeMonthly)
+      usiKey: pickFirstKey(firstProps, KEY_CANDIDATES.usi),
+      cityKey: pickFirstKey(firstProps, KEY_CANDIDATES.city),
+      countryKey: pickFirstKey(firstProps, KEY_CANDIDATES.country),
+      housingPctKey: pickFirstKey(firstProps, KEY_CANDIDATES.housingPct),
+      foodPctKey: pickFirstKey(firstProps, KEY_CANDIDATES.foodPct),
+      rentMonthlyKey: pickFirstKey(firstProps, KEY_CANDIDATES.rentMonthly),
+      foodMonthlyKey: pickFirstKey(firstProps, KEY_CANDIDATES.foodMonthly),
+      incomeMonthlyKey: pickFirstKey(firstProps, KEY_CANDIDATES.incomeMonthly)
     };
 
     const layer = L.geoJSON(geojson, {
@@ -199,20 +217,23 @@ fetch(geojsonUrl)
           radius: getRadius(u),
           color: c,
           fillColor: c,
-          fillOpacity: 0.8,
+          fillOpacity: 0.78,
           weight: 1
         });
       },
       onEachFeature: (feature, marker) => {
-        marker.bindPopup(buildPopup(feature.properties || {}, keys), { maxWidth: 340 });
+        marker.bindPopup(buildPopup(feature.properties || {}, keys), {
+          maxWidth: 340
+        });
       }
     }).addTo(map);
 
     const b = layer.getBounds();
     if (b.isValid()) map.fitBounds(b, { padding: [20, 20] });
+
+    setTimeout(hardenMapInteractivity, 50);
   })
   .catch((err) => {
     console.error(err);
     alert("Failed to load city data.");
   });
-
