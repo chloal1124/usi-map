@@ -86,17 +86,27 @@ const KEY_CANDIDATES = {
   usi: ["usi", "USI", "urban_stress_index"],
   city: ["city", "name"],
   country: ["country"],
-  housingPct: ["housing", "housing_pct"],
-  foodPct: ["food", "food_pct"],
-  incomeMonthly: ["average_monthly_salary", "income_monthly"]
-};
 
-function pickKey(obj, candidates) {
-  for (const k of candidates) {
-    if (obj[k] !== undefined) return k;
-  }
-  return null;
-}
+  housingPct: [
+    "housing",
+    "housing_pct",
+    "housing_burden",
+    "housing_share"
+  ],
+
+  foodPct: [
+    "food",
+    "food_pct",
+    "food_share",
+    "engels_index"
+  ],
+
+  incomeMonthly: [
+    "average_monthly_salary",
+    "income_monthly",
+    "typical_income"
+  ]
+};
 
 // -----------------------------------------------------
 // 5) Popup Builder
