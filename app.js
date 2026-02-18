@@ -28,6 +28,18 @@ function hardenMapInteractivity() {
 // Call early (before Leaflet creates panes)
 hardenMapInteractivity();
 
+// ===== Active Cities Control =====
+let activeCities = [];
+
+fetch("/cities/active-cities.json")
+  .then(res => res.json())
+  .then(data => {
+    activeCities = data;
+  })
+  .catch(err => {
+    console.error("Failed to load active-cities.json", err);
+  });
+
 // -------------------------------
 // 1) Create map
 // -------------------------------
@@ -133,6 +145,31 @@ function pickFirstKey(obj, candidates) {
 // -------------------------------
 // 4) Build popup content
 // -------------------------------
+
+const cityPath = `/cities/${countrySlug}/${citySlug}.html`;
+
+let reportLink = "";
+
+if (activeCities.includes(cityPath)) {
+  reportLink = `
+    <a href="${cityPath}">
+      See full report →
+    </a><br><br>
+  `;
+}
+
+popupContent = `
+  <strong>${city}</strong><br>
+  USI: ${usi}<br><br>
+
+  ${reportLink}
+
+  <a href="/calculator.html?city=${citySlug}">
+    How much would I have left? →
+  </a>
+`;
+
+
 function buildPopup(p, keys) {
   const usi = keys.usiKey ? toNumber(p[keys.usiKey]) : null;
   const city = p[keys.cityKey] || "Unknown";
