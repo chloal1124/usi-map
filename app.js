@@ -256,109 +256,75 @@ fetch(GEOJSON_FILE)
 
 let pieChart = null;
 
-// -----------------------------------------
-// 1. Wait for DOM
-// -----------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-
-  loadCityDefaults();
-  setupCalculateButton();
-  setupPDFExport();
-
+  loadFromURL();
+  setupCalculate();
+  setupPDF();
 });
 
 
-// -----------------------------------------
-// 2. Load city data from URL
-// -----------------------------------------
-function loadCityDefaults() {
+// --------------------------------------
+// 1. Load from callout URL
+// --------------------------------------
+function loadFromURL() {
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const selectedCity = urlParams.get("city");
+  const params = new URLSearchParams(window.location.search);
 
-  if (!selectedCity) return;
+  const income = parseFloat(params.get("income")) || 0;
+  const housingPct = parseFloat(params.get("housingPct")) || 0;
+  const foodPct = parseFloat(params.get("foodPct")) || 0;
 
-  fetch("usi_cities_2025Q4v1.geojson")
-    .then(res => {
-      if (!res.ok) throw new Error("GeoJSON not found");
-      return res.json();
-    })
-    .then(geojson => {
+  if (!income) return;
 
-      const cityData = geojson.features.find(f =>
-        f.properties.city &&
-        f.properties.city.toLowerCase() === selectedCity.toLowerCase()
-      );
+  // Convert % to actual amount
+  const housingValue = income * (housingPct / 100);
+  const foodValue = income * (foodPct / 100);
 
-      if (!cityData) return;
-
-      const p = cityData.properties;
-
-      const income = Number(p.average_monthly_salary || 0);
-      const housingPct = Number(p.housing || 0);
-      const foodPct = Number(p.food || 0);
-
-      const housingValue = income * (housingPct / 100);
-      const foodValue = income * (foodPct / 100);
-
-      document.getElementById("income").value = Math.round(income);
-      document.getElementById("housing").value = Math.round(housingValue);
-      document.getElementById("food").value = Math.round(foodValue);
-
-      document.getElementById("result-title").textContent =
-        "Disposable Income for " + selectedCity;
-
-    })
-    .catch(err => {
-      console.error("City default loading failed:", err);
-    });
+  document.getElementById("income").value = Math.round(income);
+  document.getElementById("housing").value = Math.round(housingValue);
+  document.getElementById("food").value = Math.round(foodValue);
 }
 
 
-// -----------------------------------------
-// 3. Setup Calculate Button
-// -----------------------------------------
-function setupCalculateButton() {
-
+// --------------------------------------
+// 2. Calculation
+// --------------------------------------
+function setupCalculate() {
   const btn = document.getElementById("calc-btn");
   if (!btn) return;
 
   btn.addEventListener("click", calculate);
 }
 
-
-// -----------------------------------------
-// 4. Main Calculation Logic
-// -----------------------------------------
 function calculate() {
 
-  const income = getNumber("income");
-  const housing = getNumber("housing");
-  const food = getNumber("food");
-  const utilities = getNumber("utilities");
-  const publicTransport = getNumber("public-transport");
-  const car = getNumber("car");
-  const clothing = getNumber("clothing");
-  const discretionary = getNumber("discretionary");
+  const income = getNum("income");
+  const housing = getNum("housing");
+  const food = getNum("food");
+  const utilities = getNum("utilities");
+  const transport = getNum("public-transport");
+  const car = getNum("car");
+  const clothing = getNum("clothing");
+  const discretionary = getNum("discretionary");
 
-  const totalExpenses =
+  const total =
     housing +
     food +
     utilities +
-    publicTransport +
+    transport +
     car +
     clothing +
     discretionary;
 
-  const remaining = income - totalExpenses;
+  const remaining = income - total;
 
-  displayResult(totalExpenses, remaining);
+  updateRemainingRow(remaining);
 
-  updatePieChart(
+  updatePie(
     housing,
     food,
     utilities,
-    publicTransport,
+    transport,
     car,
     clothing,
     discretionary,
@@ -366,42 +332,34 @@ function calculate() {
   );
 }
 
-
-// -----------------------------------------
-// 5. Utility: Get numeric value safely
-// -----------------------------------------
-function getNumber(id) {
+function getNum(id) {
   const el = document.getElementById(id);
-  if (!el) return 0;
-  return parseFloat(el.value) || 0;
+  return el ? parseFloat(el.value) || 0 : 0;
 }
 
 
-// -----------------------------------------
-// 6. Display Result
-// -----------------------------------------
-function displayResult(totalExpenses, remaining) {
+// --------------------------------------
+// 3. Update Remaining Row
+// --------------------------------------
+function updateRemainingRow(remaining) {
 
-  const resultDiv = document.getElementById("result");
-  const resultText = document.getElementById("remaining-text");
+  const cell = document.getElementById("remaining-cell");
+  if (!cell) return;
 
   const color = remaining >= 0 ? "#2ecc71" : "#e74c3c";
 
-  resultText.innerHTML = `
-    Total Expenses: ${totalExpenses.toFixed(2)}<br>
-    <span style="color:${color}; font-size:1.6em;">
-      Remaining: ${remaining.toFixed(2)}
+  cell.innerHTML = `
+    <span style="color:${color}; font-weight:bold;">
+      ${remaining.toFixed(2)}
     </span>
   `;
-
-  resultDiv.style.display = "block";
 }
 
 
-// -----------------------------------------
-// 7. Pie Chart
-// -----------------------------------------
-function updatePieChart(h, f, u, t, c, cl, d, r) {
+// --------------------------------------
+// 4. Pie Chart
+// --------------------------------------
+function updatePie(h, f, u, t, c, cl, d, r) {
 
   const ctx = document.getElementById("pieChart");
   if (!ctx) return;
@@ -440,26 +398,24 @@ function updatePieChart(h, f, u, t, c, cl, d, r) {
           "#9966ff",
           "#ff9f40",
           "#cfd8dc",
-          r >= 0 ? "#2ecc71" : "#999999"
+          r >= 0 ? "#2ecc71" : "#999"
         ]
       }]
     },
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          position: "bottom"
-        }
+        legend: { position: "bottom" }
       }
     }
   });
 }
 
 
-// -----------------------------------------
-// 8. PDF Export
-// -----------------------------------------
-function setupPDFExport() {
+// --------------------------------------
+// 5. PDF Export
+// --------------------------------------
+function setupPDF() {
 
   const btn = document.getElementById("export-pdf");
   if (!btn) return;
@@ -467,13 +423,12 @@ function setupPDFExport() {
   btn.addEventListener("click", function () {
 
     const element = document.getElementById("result");
-    if (!element) return;
 
     html2pdf().from(element).set({
       margin: 1,
       filename: "USI_Calculation.pdf",
       html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+      jsPDF: { unit: "in", format: "a4" }
     }).save();
 
   });

@@ -1,66 +1,85 @@
-<form id="calc-form" class="calc-table">
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Monthly Amount</th>
-    </tr>
+<main class="page">
 
-    <tr>
-      <td>Income</td>
-      <td><input type="number" id="income" placeholder="e.g. 344400" required /></td>
-    </tr>
+  <h1>Cost of Living & Disposable Income Calculator</h1>
+  <p>Enter your monthly income and see how much you have left.</p>
 
-    <tr>
-      <td>Housing (auto-filled)</td>
-      <td><input type="number" id="housing" /></td>
-    </tr>
+  <!-- ===== CALCULATOR TABLE ===== -->
+  <form id="calc-form" class="calc-table">
 
-    <tr>
-      <td>Food (auto-filled)</td>
-      <td><input type="number" id="food" /></td>
-    </tr>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Monthly Amount</th>
+      </tr>
 
-    <tr>
-      <td>Utilities</td>
-      <td><input type="number" id="utilities" /></td>
-    </tr>
+      <tr>
+        <td>Income</td>
+        <td><input type="number" id="income" required /></td>
+      </tr>
 
-    <tr>
-      <td>Public Transport</td>
-      <td><input type="number" id="public-transport" /></td>
-    </tr>
+      <tr>
+        <td>Housing (auto-filled)</td>
+        <td><input type="number" id="housing" /></td>
+      </tr>
 
-    <tr>
-      <td>Car Expenses</td>
-      <td><input type="number" id="car" /></td>
-    </tr>
+      <tr>
+        <td>Food (auto-filled)</td>
+        <td><input type="number" id="food" /></td>
+      </tr>
 
-    <tr>
-      <td>Clothing</td>
-      <td><input type="number" id="clothing" /></td>
-    </tr>
+      <tr>
+        <td>Utilities</td>
+        <td><input type="number" id="utilities" /></td>
+      </tr>
 
-    <tr>
-      <td>Discretionary</td>
-      <td><input type="number" id="discretionary" /></td>
-    </tr>
-  </table>
+      <tr>
+        <td>Public Transport</td>
+        <td><input type="number" id="public-transport" /></td>
+      </tr>
 
+      <tr>
+        <td>Car Expenses</td>
+        <td><input type="number" id="car" /></td>
+      </tr>
 
-  <div style="text-align:center; margin-top:20px;">
-    <button type="button" id="calc-btn" class="calc-button">
-      Calculate
-    </button>
+      <tr>
+        <td>Clothing</td>
+        <td><input type="number" id="clothing" /></td>
+      </tr>
+
+      <tr>
+        <td>Discretionary</td>
+        <td><input type="number" id="discretionary" /></td>
+      </tr>
+
+      <tr style="background:#f3f6f9; font-weight:bold;">
+        <td>Remaining</td>
+        <td id="remaining-cell">–</td>
+      </tr>
+
+    </table>
+
+    <div class="button-wrapper">
+      <button type="button" id="calc-btn">
+        Calculate
+      </button>
+    </div>
+
+  </form>
+
+  <!-- ===== RESULT SECTION (OUTSIDE FORM) ===== -->
+  <div id="report-section">
+
+    <h3 id="result-title"></h3>
+
+    <canvas id="pieChart" style="max-width:100%; margin-top:20px;"></canvas>
+
+    <div class="button-wrapper">
+      <button id="export-pdf">
+        Export as PDF
+      </button>
+    </div>
+
   </div>
 
- <div id="result">
-  ...
-</div>
-
-<div style="text-align:center; margin-top:20px;">
-  <button id="export-pdf" class="calc-button">
-    Export as PDF
-  </button>
-</div>
-
-</form>
+</main>
