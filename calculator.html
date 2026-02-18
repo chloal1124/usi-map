@@ -1,74 +1,66 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cost of Living Calculator – USI Map</title>
-  <link rel="stylesheet" href="style.css"/>
+<form id="calc-form" class="calc-table">
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Monthly Amount</th>
+    </tr>
 
-  <!-- Chart.js for pie chart -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <tr>
+      <td>Income</td>
+      <td><input type="number" id="income" placeholder="e.g. 344400" required /></td>
+    </tr>
 
-  <!-- html2pdf for PDF export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
+    <tr>
+      <td>Housing (auto-filled)</td>
+      <td><input type="number" id="housing" /></td>
+    </tr>
 
-<body>
-  <header class="topbar">
-    <div class="brand">USI Map</div>
-    <nav class="nav">
-      <a class="nav-btn" href="index.html">Map</a>
-      <a class="nav-btn active" href="calculator.html">Calculator</a>
-      <a class="nav-btn" href="methodology.html">Methodology</a>
-      <a class="nav-btn" href="sources.html">Sources</a>
-      <a class="nav-btn" href="disclaimer.html">Disclaimer</a>
-    </nav>
-  </header>
+    <tr>
+      <td>Food (auto-filled)</td>
+      <td><input type="number" id="food" /></td>
+    </tr>
 
-  <main class="page" style="max-width: 600px; margin: 80px auto 40px; padding: 0 20px;">
-    <h1>Cost of Living & Disposable Income Calculator</h1>
-    <p>Enter your monthly income and see how much you have left after essentials. Defaults pulled from selected city (if coming from map).</p>
+    <tr>
+      <td>Utilities</td>
+      <td><input type="number" id="utilities" /></td>
+    </tr>
 
-    <form id="calc-form">
-      <label>Monthly Income (local currency):</label>
-      <input type="number" id="income" placeholder="e.g. 344400" required />
+    <tr>
+      <td>Public Transport</td>
+      <td><input type="number" id="public-transport" /></td>
+    </tr>
 
-      <label>Housing Cost (estimated):</label>
-      <input type="number" id="housing" placeholder="Auto-filled from city data" />
+    <tr>
+      <td>Car Expenses</td>
+      <td><input type="number" id="car" /></td>
+    </tr>
 
-      <label>Essential Food Cost (estimated):</label>
-      <input type="number" id="food" placeholder="Auto-filled from city data" />
+    <tr>
+      <td>Clothing</td>
+      <td><input type="number" id="clothing" /></td>
+    </tr>
 
-      <!-- User-filled rows (as per your sketch) -->
-      <label>Utilities:</label>
-      <input type="number" id="utilities" placeholder="e.g. electricity, water" />
+    <tr>
+      <td>Discretionary</td>
+      <td><input type="number" id="discretionary" /></td>
+    </tr>
+  </table>
 
-      <label>Public Transport:</label>
-      <input type="number" id="public-transport" placeholder="e.g. train/bus pass" />
 
-      <label>Car Expenses (fuel, maintenance):</label>
-      <input type="number" id="car" placeholder="optional" />
+  <div style="text-align:center; margin-top:20px;">
+    <button type="button" id="calc-btn" class="calc-button">
+      Calculate
+    </button>
+  </div>
 
-      <label>Clothing:</label>
-      <input type="number" id="clothing" placeholder="optional" />
+ <div id="result">
+  ...
+</div>
 
-      <label>Additional Discretionary (entertainment, etc.):</label>
-      <input type="number" id="discretionary" placeholder="optional" />
+<div style="text-align:center; margin-top:20px;">
+  <button id="export-pdf" class="calc-button">
+    Export as PDF
+  </button>
+</div>
 
-      <button type="button" id="calc-btn">Calculate Remaining Money</button>
-    </form>
-
-    <div id="result" style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px; display: none;">
-      <h3 id="result-title"></h3>
-      <p id="remaining-text" style="font-size: 1.4em; font-weight: bold;"></p>
-      <canvas id="pieChart" width="400" height="400" style="max-width: 100%; margin-top: 20px;"></canvas>
-
-      <button id="export-pdf" style="margin-top: 20px; padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
-        Export as PDF
-      </button>
-    </div>
-  </main>
-
-  <script src="calculator.js"></script> <!-- 新 JS 文件，下面會寫 -->
-</body>
-</html>
+</form>
