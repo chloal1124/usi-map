@@ -96,11 +96,12 @@ function calculate() {
 // Pie chart (Chart.js)
 // ----------------------------------
 function updatePie(dataObj) {
+
   const canvas = document.getElementById("pieChart");
   if (!canvas || typeof Chart === "undefined") return;
 
   const labels = Object.keys(dataObj);
-  const values = Object.values(dataObj).map(v => round2(v));
+  const values = Object.values(dataObj);
 
   const sum = values.reduce((a, b) => a + b, 0);
   if (sum <= 0) {
@@ -117,11 +118,11 @@ function updatePie(dataObj) {
       labels: labels,
       datasets: [{
         data: values,
-        backgroundColor: labels.map(label =>
-          label === "Remaining"
+        backgroundColor: labels.map(function(label) {
+          return label === "Remaining"
             ? "#2ecc71"
-            : "#bbbbbb"
-        )
+            : "#bbbbbb";
+        })
       }]
     },
     options: {
@@ -131,8 +132,8 @@ function updatePie(dataObj) {
       }
     }
   });
-}
 
+}
 // ----------------------------------
 // PDF Export (html2pdf)
 // ----------------------------------
