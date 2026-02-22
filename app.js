@@ -4,7 +4,7 @@
 // =====================================================
 
 const GEOJSON_FILE = "usi_cities_2025Q4v1.geojson";
-const ACTIVE_REPORTS_FILE = "active-cities.json";
+const ACTIVE_REPORTS_FILE = "/cities/active-cities.json";
 
 let activeCitySlugs = new Set();
 
@@ -141,19 +141,19 @@ function buildPopup(p, keys) {
 
   const rating = usiRating(usi);
   const citySlug = slugify(city);
-  const countryFolder = countryToFolder(countryRaw);
+
 
   const hasReport = activeCitySlugs.has(citySlug);
 
   const reportLink = hasReport
-    ? `
-      <div style="margin-top:12px;">
-        <a href="./cities/${countryFolder}/${citySlug}.html" target="_blank" rel="noopener">
-          See full city report →
-        </a>
-      </div>
-    `
-    : "";
+  ? `
+    <div style="margin-top:12px;">
+      <a href="/cities/${citySlug}.html" target="_blank" rel="noopener">
+        See full city report →
+      </a>
+    </div>
+  `
+  : "";
 
   return `
     <div style="min-width:180px; font-family:system-ui; font-size:13px; line-height:1.4;">
