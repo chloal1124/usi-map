@@ -1,99 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/halifax.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/vancouver.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/toronto.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/ottawa.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/montreal.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/calgary.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/winnipeg.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/quebec-city.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/canada/edmonton.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/san-diego.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/miami.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/boston.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/los-angeles.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/orlando.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/boise.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/tampa.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/atlanta.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/new-york-city.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
-    <url>
-        <loc>https://your-domain.pages.dev/cities/usa/washington-dc.html</loc>
-        <lastmod>2026-02-18</lastmod>
-    </url>
-    
+<url>
+  <loc>https://urbanstressindex.com/</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/halifax.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/vancouver.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/toronto.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/ottawa.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/montreal.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/calgary.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/winnipeg.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/quebec-city.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/san-diego.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/miami.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/edmonton.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/boston.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/los-angeles.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/orlando.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/boise.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/tampa.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/atlanta.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/new-york-city.html</loc>
+</url>
+
+<url>
+  <loc>https://urbanstressindex.com/cities/washington-dc.html</loc>
+</url>
+
 </urlset>
