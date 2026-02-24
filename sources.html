@@ -182,7 +182,202 @@
       </ul>
     </section>
 
-    <section>
+<section>
+  <h2>Europe</h2>
+
+  <p>
+European data sources are grouped by country. Official national statistical agencies are prioritised for income data wherever available. Where harmonised city-level rent series are not consistently available across countries, publicly available rental market datasets are used as cross-country proxies. All values are expressed in local currency unless otherwise stated.
+</p>
+
+<p>
+In cases where city-level income data are not publicly available, a proxy based on the reported salary range of a junior mechanical engineer (1–3 years of experience) from Glassdoor is applied. For housing, the indicator “1 Bedroom Apartment in City Centre” from Numbeo is used as a rental cost proxy in markets lacking consistent official rent statistics.
+</p>
+
+  <!-- ================= UK ================= -->
+  <section>
+    <h3>United Kingdom</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Office for National Statistics (ONS) –
+        <em>Median gross weekly earnings for full-time employees by local authority (place of work)</em>.
+        <div class="note">
+          Weekly gross earnings converted to monthly equivalent. Values expressed in GBP.
+        </div>
+      </li>
+    </ul>
+
+    <h4>Housing (rent)</h4>
+    <ul>
+      <li>
+        ONS – <em>Average private rent, local authorities in England and Wales and Broad Rental Market Areas in Scotland (May 2024)</em>.
+        <div class="note">
+          Used as proxy for 1-bedroom rental cost in selected urban areas.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Ireland ================= -->
+  <section>
+    <h3>Ireland</h3>
+
+    <h4>Housing (rent)</h4>
+    <ul>
+      <li>
+        Residential Tenancies Board (RTB) –
+        <em>Average Monthly Rent Report</em>.
+      </li>
+    </ul>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Central Statistics Office (CSO) –
+        <em>Median weekly earnings by county and sex (2022–2024)</em>.
+        <div class="note">
+          2024 median weekly earnings converted to monthly equivalent.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Luxembourg ================= -->
+  <section>
+    <h3>Luxembourg</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Statistics Portal Luxembourg –
+        <em>Luxembourg in Figures 2025</em>.
+        <div class="note">
+          Gross salary statistics used. Values expressed in EUR.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Switzerland ================= -->
+  <section>
+    <h3>Switzerland</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Swiss Federal Statistical Office –
+        Official wage statistics.
+        <div class="note">
+          Median or average monthly earnings used depending on data availability.
+          Values expressed in CHF.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Netherlands ================= -->
+  <section>
+    <h3>Netherlands</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Statistics Netherlands (CBS) –
+        Earnings and labour market statistics.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Czech Republic ================= -->
+  <section>
+    <h3>Czech Republic</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Czech Statistical Office –
+        Employees and wages statistics.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Germany ================= -->
+  <section>
+    <h3>Germany</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Federal Statistical Office of Germany (Destatis) –
+        Earnings statistics.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Sweden ================= -->
+  <section>
+    <h3>Sweden</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Statistics Sweden (SCB) –
+        <em>Average monthly salary in municipalities</em>.
+        <div class="note">
+          Municipal-level earnings extracted from Statistikdatabasen.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Poland ================= -->
+  <section>
+    <h3>Poland</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Statistics Poland (GUS) –
+        <em>Distribution of wages and salaries in the national economy (June 2025)</em>.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= France ================= -->
+  <section>
+    <h3>France</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        INSEE –
+        <em>Dispersion des salaires mensuels net en équivalent temps plein (2023)</em>.
+        <div class="note">
+          Median net earnings converted to gross equivalent where necessary.
+          For modelling consistency, an estimated 28% tax adjustment is applied.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= Spain ================= -->
+  <section>
+    <h3>Spain</h3>
+
+    <h4>Income</h4>
+    <ul>
+      <li>
+        Instituto Nacional de Estadística (INE) –
+        Earnings distribution by Autonomous Community.
+        <div class="note">
+          Regional median earnings adjusted using recent wage growth indicators (2023–2025).
+        </div>
+      </li>
+    </ul>
+  </section>
+
+<section>
       <h2>Food cost proxy (all countries)</h2>
 
       <ul>
@@ -193,11 +388,14 @@
           <div class="note">
             Food costs are retrieved from Numbeo using “Meal at an Inexpensive Restaurant” as the anchor price.
             Additional assumptions and sensitivity discussions will be posted in later updates.
+
+	    For Japan, since the data from Numbeo is limited, the price of grilled mackerel set (さばの炭火焼き) was adopted as the equivalent of “Meal at an Inexpensive Restaurant” at Numbeo to reflect the 	    local dining habit.
           </div>
         </li>
       </ul>
     </section>
 
+</section>
     <section>
       <h2>Notes on reproducibility</h2>
       <ul>

@@ -29,7 +29,18 @@
 <main class="page">
 
   <h1>Cost of Living & Disposable Income Calculator</h1>
-  <p>Enter your monthly income and see how much you have left.</p>
+  <p>
+This calculator builds on the Urban Stress Index framework by allowing you to
+estimate your remaining disposable income after housing, food, and additional
+personal expenses. While USI focuses on structural cost burden (housing and essential food),
+this tool extends the analysis to reflect individual lifestyle choices.
+</p>
+
+<p style="font-size:0.9rem; color:#666;">
+Housing and food represent the baseline affordability pressure used in USI.
+Additional categories such as utilities, transport, and discretionary spending
+are optional and can be adjusted to match your personal situation.
+</p>
 
   <div class="calc-container">
 
@@ -48,12 +59,12 @@
         </tr>
 
         <tr>
-          <td>Housing (auto-filled)</td>
+          <td>Housing</td>
           <td><input type="number" id="housing" step="0.01" /></td>
         </tr>
 
         <tr>
-          <td>Food (auto-filled)</td>
+          <td>Food</td>
           <td><input type="number" id="food" step="0.01" /></td>
         </tr>
 
@@ -83,7 +94,7 @@
         </tr>
 
         <tr style="background:#f3f6f9; font-weight:bold;">
-          <td>Remaining</td>
+          <td>Remaining (% of income)</td>
           <td id="remaining-cell">–</td>
         </tr>
       </table>
