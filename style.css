@@ -312,4 +312,20 @@ button:hover {
     max-height: 280px;
   }
 }
+/* =================================================
+   Insight article charts 
+================================================= */
+
+.chart-block {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.insight-chart {
+  width: 100%;
+  max-width: 800px;   /* control max size */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
 
