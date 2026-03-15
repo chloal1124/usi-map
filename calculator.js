@@ -67,10 +67,10 @@ function calculate() {
   // Update Remaining row
   const remainingCell = document.getElementById("remaining-cell");
 
-  if (remainingCell && income > 0) {
+ if (remainingCell && income > 0) {
 
-  const remainingPct = (remaining / income) * 100;
-  const usi = (total / income) * 100;
+  const remainingPct = income > 0 ? (remaining / income) * 100 : 0;
+  const usi = income > 0 ? (total / income) * 100 : 0;
 
   const color = remaining >= 0 ? "#2ecc71" : "#e74c3c";
 
@@ -127,6 +127,7 @@ function updatePie(dataObj) {
         backgroundColor: labels.map(function(label) {
          if (label === "Remaining") return "#2ecc71";   // green
  	 if (label === "Spent") return "#d0d0d0";       // light gray
+return "#d0d0d0";   // fallback
           }
         })
       }]
