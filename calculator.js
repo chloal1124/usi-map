@@ -66,26 +66,29 @@ function calculate() {
 
   // Update Remaining row
   const remainingCell = document.getElementById("remaining-cell");
-  if (remainingCell) {
-    const color = remaining >= 0 ? "#2ecc71" : "#e74c3c";
-    remainingCell.innerHTML = `
-      <span style="color:${color}; font-weight:600;">
-        ${fmt2(remaining)}
-      </span>
-    `;
-  }
+
+  if (remainingCell && income > 0) {
+
+  const remainingPct = (remaining / income) * 100;
+  const usi = (total / income) * 100;
+
+  const color = remaining >= 0 ? "#2ecc71" : "#e74c3c";
+
+  remainingCell.innerHTML = `
+    <div style="color:${color}; font-weight:600;">
+      Remaining: ${fmt2(remaining)}
+    </div>
+    <div style="font-size:13px; color:#555;">
+      Your USI: ${usi.toFixed(1)} (${remainingPct.toFixed(1)}% remaining)
+    </div>
+  `;
+}
 
   // Update pie chart (remaining shown as 0 if negative)
-  updatePie({
-    Housing: housing,
-    Food: food,
-    Utilities: utilities,
-    "Public Transport": transport,
-    "Car Expenses": car,
-    Clothing: clothing,
-    Discretionary: discretionary,
-    Remaining: Math.max(remaining, 0)
-  });
+updatePie({
+  Spent: total,
+  Remaining: Math.max(remaining, 0)
+});
 
   // Optional: if you want a text summary somewhere
   const title = document.getElementById("result-title");
@@ -122,10 +125,8 @@ function updatePie(dataObj) {
       datasets: [{
         data: values,
         backgroundColor: labels.map(function(label) {
-          if (label === "Remaining") {
-            return "#2ecc71";
-          } else {
-            return "#bbbbbb";
+         if (label === "Remaining") return "#2ecc71";   // green
+ 	 if (label === "Spent") return "#d0d0d0";       // light gray
           }
         })
       }]
