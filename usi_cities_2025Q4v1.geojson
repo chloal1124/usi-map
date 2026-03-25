@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -9.1393,
+          38.7223
+        ]
+      },
+      "properties": {
+        "city": "Lisbon",
+        "country": "Portugal",
+        "average_monthly_salary": 1571.0,
+        "monthly_rent_1br": 1336.21,
+        "monthly_food": 312.0,
+        "engels_index": 19.86,
+        "rental_index": 85.05,
+        "usi": 104.91,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6291,
+          41.1579
+        ]
+      },
+      "properties": {
+        "city": "Porto",
+        "country": "Portugal",
+        "average_monthly_salary": 1366.0,
+        "monthly_rent_1br": 1099.38,
+        "monthly_food": 273.0,
+        "engels_index": 19.99,
+        "rental_index": 80.48,
+        "usi": 100.47,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9444,
+          40.6401
+        ]
+      },
+      "properties": {
+        "city": "Thessaloniki",
+        "country": "Greece",
+        "average_monthly_salary": 1035.0,
+        "monthly_rent_1br": 538.52,
+        "monthly_food": 390.0,
+        "engels_index": 37.68,
+        "rental_index": 52.03,
+        "usi": 89.71,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5146,
+          35.8989
+        ]
+      },
+      "properties": {
+        "city": "Valletta",
+        "country": "Malta",
+        "average_monthly_salary": 1785.33,
+        "monthly_rent_1br": 1131.29,
+        "monthly_food": 455.0,
+        "engels_index": 25.49,
+        "rental_index": 63.37,
+        "usi": 88.85,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           14.2681,
           40.8518
         ]
@@ -21,6 +109,50 @@
         "usi": 88.41,
         "rating": "Extreme",
         "as_of_date": "May 2025"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7275,
+          37.9838
+        ]
+      },
+      "properties": {
+        "city": "Athens",
+        "country": "Greece",
+        "average_monthly_salary": 1150.0,
+        "monthly_rent_1br": 614.61,
+        "monthly_food": 390.0,
+        "engels_index": 33.91,
+        "rental_index": 53.44,
+        "usi": 87.36,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4265,
+          41.5454
+        ]
+      },
+      "properties": {
+        "city": "Braga",
+        "country": "Portugal",
+        "average_monthly_salary": 1366.0,
+        "monthly_rent_1br": 801.5,
+        "monthly_food": 260.0,
+        "engels_index": 19.03,
+        "rental_index": 58.67,
+        "usi": 77.71,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
       }
     },
     {
@@ -417,6 +549,28 @@
         "usi": 54.66,
         "rating": "Extreme",
         "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.3823,
+          35.1856
+        ]
+      },
+      "properties": {
+        "city": "Nicosia",
+        "country": "Cyprus",
+        "average_monthly_salary": 1975.0,
+        "monthly_rent_1br": 684.29,
+        "monthly_food": 390.0,
+        "engels_index": 19.75,
+        "rental_index": 34.65,
+        "usi": 54.39,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q2"
       }
     },
     {
@@ -945,6 +1099,28 @@
         "usi": 42.3,
         "rating": "Severe burden",
         "as_of_date": "May 2024"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.9426,
+          64.1466
+        ]
+      },
+      "properties": {
+        "city": "Reykjavik",
+        "country": "Iceland",
+        "average_monthly_salary": 914191.67,
+        "monthly_rent_1br": 294842.11,
+        "monthly_food": 91000.0,
+        "engels_index": 9.95,
+        "rental_index": 32.25,
+        "usi": 42.21,
+        "rating": "Severe burden",
+        "as_of_date": "2025 Q3"
       }
     },
     {
@@ -1502,6 +1678,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          10.7522,
+          59.9139
+        ]
+      },
+      "properties": {
+        "city": "Oslo",
+        "country": "Norway",
+        "average_monthly_salary": 71380.5,
+        "monthly_rent_1br": 18431.25,
+        "monthly_food": 6500.0,
+        "engels_index": 9.11,
+        "rental_index": 25.82,
+        "usi": 34.93,
+        "rating": "Stretched",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -82.4572,
           27.9506
         ]
@@ -1847,6 +2045,28 @@
         "usi": 32.63,
         "rating": "Stretched",
         "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3221,
+          60.3913
+        ]
+      },
+      "properties": {
+        "city": "Bergen",
+        "country": "Norway",
+        "average_monthly_salary": 62070.0,
+        "monthly_rent_1br": 13661.54,
+        "monthly_food": 6500.0,
+        "engels_index": 10.47,
+        "rental_index": 22.01,
+        "usi": 32.48,
+        "rating": "Stretched",
+        "as_of_date": "2025 Q3"
       }
     },
     {
