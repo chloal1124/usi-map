@@ -44,21 +44,23 @@ function countryToFolder(countryRaw) {
 function usiRating(u) {
   if (u === null) return "Unknown";
   if (u < 30) return "Comfortable";
-  if (u < 35) return "Stretched";
-  if (u < 40) return "High burden";
-  if (u < 45) return "Severe burden";
-  if (u < 55) return "Unaffordable";
-  return "Extreme";
+  if (u < 40) return "Stretched";
+  if (u < 50) return "High burden";
+  if (u < 60) return "Severe burden";
+  if (u < 75) return "Unaffordable";
+  if (u < 100) return "Extreme";
+  return "Critical";
 }
 
 function getColor(u) {
   if (u === null) return "#999";
-  if (u < 30) return "#2ecc71";
-  if (u < 35) return "#f1c40f";
-  if (u < 40) return "#e67e22";
-  if (u < 45) return "#e74c3c";
-  if (u < 55) return "#6c3483";
-  return "#3b1f4a";
+  if (u < 30) return "#2ecc71";   // green
+  if (u < 40) return "#f1c40f";   // yellow
+  if (u < 50) return "#e67e22";   // orange
+  if (u < 60) return "#e74c3c";   // red
+  if (u < 75) return "#a569bd";   // light purple
+  if (u < 100) return "#6c3483";  // purple
+  return "#1c1c1c";               // charcoal
 }
 
 function getRadius(u) {
@@ -160,7 +162,7 @@ function buildPopup(p, keys) {
       <b>${city}${countryLabel}</b>
 
       <div style="margin-top:8px;">
-        USI: ${keepDecimals(usi)} (${rating})
+        USI: ${keepDecimals(usi)}
       </div>
 
       <div style="margin-top:8px;">

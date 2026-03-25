@@ -91,8 +91,9 @@ body {
 .swatch.yellow      { background: #f1c40f; }
 .swatch.orange      { background: #e67e22; }
 .swatch.red         { background: #e74c3c; }
+.swatch.purple-light { background: #a569bd; }
 .swatch.purple      { background: #6c3483; }
-.swatch.purple-dark { background: #3b1f4a; }
+.swatch.charcoal     { background: #1c1c1c; }
 
 
 /* =================================================
