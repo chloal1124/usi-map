@@ -380,6 +380,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          21.35,
+          48.73
+        ]
+      },
+      "properties": {
+        "city": "Kosice",
+        "country": "Slovakia",
+        "average_monthly_salary": 1700.0,
+        "monthly_rent_1br": 820.67,
+        "monthly_food": 247.0,
+        "engels_index": 14.53,
+        "rental_index": 48.27,
+        "usi": 62.8,
+        "rating": "Extreme",
+        "as_of_date": "2029 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           11.3426,
           44.4949
         ]
@@ -468,6 +490,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          19.04,
+          47.5
+        ]
+      },
+      "properties": {
+        "city": "Budapest",
+        "country": "Hungary",
+        "average_monthly_salary": 668470.0,
+        "monthly_rent_1br": 280000.0,
+        "monthly_food": 104000.0,
+        "engels_index": 15.56,
+        "rental_index": 41.89,
+        "usi": 57.44,
+        "rating": "Extreme",
+        "as_of_date": "2026 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -114.0719,
           51.0447
         ]
@@ -527,6 +571,28 @@
         "usi": 55.04,
         "rating": "Extreme",
         "as_of_date": "2025 Q2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.75,
+          59.44
+        ]
+      },
+      "properties": {
+        "city": "Tallinn",
+        "country": "Estonia",
+        "average_monthly_salary": 1971.0,
+        "monthly_rent_1br": 692.19,
+        "monthly_food": 390.0,
+        "engels_index": 19.79,
+        "rental_index": 35.12,
+        "usi": 54.91,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
       }
     },
     {
@@ -666,6 +732,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          24.11,
+          56.95
+        ]
+      },
+      "properties": {
+        "city": "Riga",
+        "country": "Latvia",
+        "average_monthly_salary": 1608.2,
+        "monthly_rent_1br": 522.8,
+        "monthly_food": 312.0,
+        "engels_index": 19.4,
+        "rental_index": 32.51,
+        "usi": 51.91,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           14.44,
           50.08
         ]
@@ -681,6 +769,50 @@
         "usi": 51.87,
         "rating": "Extreme",
         "as_of_date": "2025 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.12,
+          48.15
+        ]
+      },
+      "properties": {
+        "city": "Bratislava",
+        "country": "Slovakia",
+        "average_monthly_salary": 2250.0,
+        "monthly_rent_1br": 886.54,
+        "monthly_food": 279.5,
+        "engels_index": 12.42,
+        "rental_index": 39.4,
+        "usi": 51.82,
+        "rating": "Extreme",
+        "as_of_date": "2028 Q3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63,
+          47.53
+        ]
+      },
+      "properties": {
+        "city": "Debrecen",
+        "country": "Hungary",
+        "average_monthly_salary": 607700.0,
+        "monthly_rent_1br": 197916.67,
+        "monthly_food": 117000.0,
+        "engels_index": 19.25,
+        "rental_index": 32.57,
+        "usi": 51.82,
+        "rating": "Extreme",
+        "as_of_date": "2027 Q3"
       }
     },
     {
@@ -747,6 +879,28 @@
         "usi": 49.88,
         "rating": "Extreme",
         "as_of_date": "2026 Q1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.28,
+          54.69
+        ]
+      },
+      "properties": {
+        "city": "Vilnius",
+        "country": "Lithuania",
+        "average_monthly_salary": 2127.4,
+        "monthly_rent_1br": 736.8,
+        "monthly_food": 312.0,
+        "engels_index": 14.67,
+        "rental_index": 34.63,
+        "usi": 49.3,
+        "rating": "Extreme",
+        "as_of_date": "2025 Q3"
       }
     },
     {
