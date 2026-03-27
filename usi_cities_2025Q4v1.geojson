@@ -974,6 +974,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          172.6362,
+          -43.5321
+        ]
+      },
+      "properties": {
+        "city": "Christchurch",
+        "country": "New Zealand",
+        "average_monthly_salary": 5819.67,
+        "monthly_rent_1br": 1950.0,
+        "monthly_food": 780.0,
+        "engels_index": 13.4,
+        "rental_index": 33.51,
+        "usi": 46.91,
+        "rating": "Extreme",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -80.1918,
           25.7617
         ]
@@ -1062,6 +1084,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          174.7633,
+          -36.8485
+        ]
+      },
+      "properties": {
+        "city": "Auckland",
+        "country": "New Zealand",
+        "average_monthly_salary": 6066.67,
+        "monthly_rent_1br": 1950.0,
+        "monthly_food": 650.0,
+        "engels_index": 10.71,
+        "rental_index": 32.14,
+        "usi": 42.86,
+        "rating": "Severe burden",
+        "as_of_date": "2025-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -113.4938,
           53.5461
         ]
@@ -1121,28 +1165,6 @@
         "usi": 42.21,
         "rating": "Severe burden",
         "as_of_date": "2025 Q3"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          172.6362,
-          -43.5321
-        ]
-      },
-      "properties": {
-        "city": "Christchurch",
-        "country": "New Zealand",
-        "average_monthly_salary": 6547.67,
-        "monthly_rent_1br": 1950.0,
-        "monthly_food": 780.0,
-        "engels_index": 11.91,
-        "rental_index": 29.78,
-        "usi": 41.69,
-        "rating": "Severe burden",
-        "as_of_date": "2025-09"
       }
     },
     {
@@ -1275,6 +1297,28 @@
         "usi": 39.38,
         "rating": "High burden",
         "as_of_date": "2026 Q1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7762,
+          -41.2865
+        ]
+      },
+      "properties": {
+        "city": "Wellington",
+        "country": "New Zealand",
+        "average_monthly_salary": 6378.67,
+        "monthly_rent_1br": 1755.0,
+        "monthly_food": 754.0,
+        "engels_index": 11.82,
+        "rental_index": 27.51,
+        "usi": 39.33,
+        "rating": "High burden",
+        "as_of_date": "2025-09"
       }
     },
     {
@@ -1517,28 +1561,6 @@
         "usi": 36.05,
         "rating": "High burden",
         "as_of_date": "2025-06"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          174.7633,
-          -36.8485
-        ]
-      },
-      "properties": {
-        "city": "Auckland",
-        "country": "New Zealand",
-        "average_monthly_salary": 7254.0,
-        "monthly_rent_1br": 1950.0,
-        "monthly_food": 650.0,
-        "engels_index": 8.96,
-        "rental_index": 26.88,
-        "usi": 35.84,
-        "rating": "High burden",
-        "as_of_date": "2025-09"
       }
     },
     {
@@ -1869,28 +1891,6 @@
         "usi": 33.7,
         "rating": "Stretched",
         "as_of_date": "2025-06"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          174.7762,
-          -41.2865
-        ]
-      },
-      "properties": {
-        "city": "Wellington",
-        "country": "New Zealand",
-        "average_monthly_salary": 7449.0,
-        "monthly_rent_1br": 1755.0,
-        "monthly_food": 754.0,
-        "engels_index": 10.12,
-        "rental_index": 23.56,
-        "usi": 33.68,
-        "rating": "Stretched",
-        "as_of_date": "2025-09"
       }
     },
     {
