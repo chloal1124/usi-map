@@ -473,7 +473,7 @@
         ]
       },
       "properties": {
-        "city": "London",
+        "city": "London (Camden)",
         "country": "United Kingdom",
         "average_monthly_salary": 3998.4,
         "monthly_rent_1br": 1821.0,
@@ -1876,6 +1876,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.14,
+          36.17
+        ]
+      },
+      "properties": {
+        "city": "Las Vegas",
+        "country": "USA",
+        "average_monthly_salary": 5287.8,
+        "monthly_rent_1br": 1175.0,
+        "monthly_food": 650.0,
+        "engels_index": 12.29,
+        "rental_index": 22.22,
+        "usi": 34.51,
+        "rating": "Stretched",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -82.4572,
           27.9506
         ]
@@ -2294,6 +2316,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -89.4,
+          43.07
+        ]
+      },
+      "properties": {
+        "city": "Madison",
+        "country": "USA",
+        "average_monthly_salary": 6014.4,
+        "monthly_rent_1br": 1405.0,
+        "monthly_food": 520.0,
+        "engels_index": 8.65,
+        "rental_index": 23.36,
+        "usi": 32.01,
+        "rating": "Stretched",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           9.9937,
           53.5511
         ]
@@ -2353,6 +2397,28 @@
         "usi": 31.47,
         "rating": "Stretched",
         "as_of_date": "2026 Q1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.49,
+          31.76
+        ]
+      },
+      "properties": {
+        "city": "El Paso",
+        "country": "USA",
+        "average_monthly_salary": 4149.6,
+        "monthly_rent_1br": 823.0,
+        "monthly_food": 481.0,
+        "engels_index": 11.59,
+        "rental_index": 19.83,
+        "usi": 31.42,
+        "rating": "Stretched",
+        "as_of_date": "2026-02"
       }
     },
     {
@@ -2558,6 +2624,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -75.17,
+          39.95
+        ]
+      },
+      "properties": {
+        "city": "Philadelphia",
+        "country": "USA",
+        "average_monthly_salary": 6724.2,
+        "monthly_rent_1br": 1421.0,
+        "monthly_food": 546.0,
+        "engels_index": 8.12,
+        "rental_index": 21.13,
+        "usi": 29.25,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -105.2705,
           40.01499
         ]
@@ -2573,6 +2661,28 @@
         "usi": 29.01,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.91,
+          43.04
+        ]
+      },
+      "properties": {
+        "city": "Milwaukee",
+        "country": "USA",
+        "average_monthly_salary": 5506.2,
+        "monthly_rent_1br": 1075.0,
+        "monthly_food": 520.0,
+        "engels_index": 9.44,
+        "rental_index": 19.52,
+        "usi": 28.97,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
       }
     },
     {
@@ -2844,6 +2954,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -81.66,
+          30.33
+        ]
+      },
+      "properties": {
+        "city": "Jacksonville",
+        "country": "USA",
+        "average_monthly_salary": 5787.6,
+        "monthly_rent_1br": 1038.0,
+        "monthly_food": 520.0,
+        "engels_index": 8.98,
+        "rental_index": 17.93,
+        "usi": 26.92,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.7,
           35.5167
         ]
@@ -2903,6 +3035,28 @@
         "usi": 26.55,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.52,
+          35.47
+        ]
+      },
+      "properties": {
+        "city": "Oklahoma City",
+        "country": "USA",
+        "average_monthly_salary": 5363.4,
+        "monthly_rent_1br": 897.0,
+        "monthly_food": 520.0,
+        "engels_index": 9.7,
+        "rental_index": 16.72,
+        "usi": 26.42,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
       }
     },
     {
@@ -3174,6 +3328,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -86.16,
+          39.77
+        ]
+      },
+      "properties": {
+        "city": "Indianapolis",
+        "country": "USA",
+        "average_monthly_salary": 6069.0,
+        "monthly_rent_1br": 954.0,
+        "monthly_food": 520.0,
+        "engels_index": 8.57,
+        "rental_index": 15.72,
+        "usi": 24.29,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           139.0619,
           37.9122
         ]
@@ -3262,6 +3438,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -76.61,
+          39.29
+        ]
+      },
+      "properties": {
+        "city": "Baltimore",
+        "country": "USA",
+        "average_monthly_salary": 6930.0,
+        "monthly_rent_1br": 1117.0,
+        "monthly_food": 494.0,
+        "engels_index": 7.13,
+        "rental_index": 16.12,
+        "usi": 23.25,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           136.9,
           35.1833
         ]
@@ -3321,6 +3519,28 @@
         "usi": 22.95,
         "rating": "Comfortable",
         "as_of_date": "2025-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.05,
+          35.15
+        ]
+      },
+      "properties": {
+        "city": "Memphis",
+        "country": "USA",
+        "average_monthly_salary": 6022.8,
+        "monthly_rent_1br": 862.0,
+        "monthly_food": 520.0,
+        "engels_index": 8.63,
+        "rental_index": 14.31,
+        "usi": 22.95,
+        "rating": "Comfortable",
+        "as_of_date": "2026-02"
       }
     },
     {
